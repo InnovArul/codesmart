@@ -6,52 +6,41 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author Arulkumar
  */
-/*************************************************************************
- * Name:  Arulkumar
- * Email: arul.subramaniam@hotmail.com
- *
- * Compilation:  javac DateWithAvni.java
- * Execution:
- * Dependencies:
- *
- * Description:
- *
- *************************************************************************/
-public class DateWithAvni {
+class TiredKnights {
 
     static PrintWriter out = new PrintWriter(System.out);
     static InputReader Reader = new InputReader(System.in);
 
     public static void main(String[] args) {
-        int numTests = Reader.nextInt();
-        for (int index = 0; index < numTests; index++) {
-            String str = Reader.nextLine();
+        int NumTests = Reader.nextInt();
 
-            boolean isPassed = true;
+        for (int i = 0; i < NumTests; i++) {
+            long N = Reader.nextUnsignedLong();
+            long M = Reader.nextUnsignedLong();
 
-            for (int i = 0; i < str.length() - 1; i++) {
-                if (str.charAt(i) == str.charAt(i + 1)) {
-                    out.println("SLAP");
-                    isPassed = false;
-                    break;
-                }
+            long midPoint = N / 2;
+
+            long knight = (M + midPoint) % N;
+
+            if (0 == knight) {
+                knight = N;
             }
 
-            if (isPassed) {
-                out.println("KISS");
-            }
-
+            out.println(Long.toUnsignedString(knight));
             out.flush();
         }
 
         out.close();
+
     }
 
-    /** Class for buffered reading int and double values */
+    /**
+     * Class for buffered reading int and double values
+     */
     private static class InputReader {
 
         public BufferedReader reader;
@@ -79,6 +68,10 @@ public class DateWithAvni {
 
         public long nextLong() {
             return Long.parseLong(next());
+        }
+
+        public long nextUnsignedLong() {
+            return Long.parseUnsignedLong(next());
         }
 
         public String nextLine() {
