@@ -1,0 +1,5 @@
+D:\My.Soft.Dev\codesmart\MarchChallenge2013_VS\MarchChallenge2013_VS\bin\Debug\MarchChallenge2013_VS.exe
+D:\My.Soft.Dev\codesmart\MarchChallenge2013_VS\MarchChallenge2013_VS\bin\Debug\MarchChallenge2013_VS.pdb
+D:\My.Soft.Dev\codesmart\MarchChallenge2013_VS\MarchChallenge2013_VS\obj\x86\Debug\MarchChallenge2013_VS.exe
+D:\My.Soft.Dev\codesmart\MarchChallenge2013_VS\MarchChallenge2013_VS\obj\x86\Debug\MarchChallenge2013_VS.pdb
+D:\My.Soft.Dev\codesmart\MarchChallenge2013_VS\MarchChallenge2013_VS\obj\x86\Debug\MarchChallenge2013_VS.csprojResolveAssemblyReference.cache
