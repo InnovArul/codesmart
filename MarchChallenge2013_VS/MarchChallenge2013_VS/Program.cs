@@ -85,16 +85,49 @@ class Program
         for (int i = 0; i < NumTests; i++)
         {
             int sine = Scanner.nextInt();
-            int cos = Scanner.nextInt();
+            int cosine = Scanner.nextInt();
             int K = Scanner.nextInt();
 
-            long totalPts = getSinePoints(sine - K + 1) + getCosPoints(cos);
+            long totalPts = 0;
+
+            totalPts += getSinePoints(sine - K + 1);
+
+            totalPts += getCosSinePoints(sine, cosine, K);
 
             Console.WriteLine(totalPts);
         }
 
-        Console.ReadKey();
+        //Console.ReadKey();
 
+    }
+
+    private static long getCosSinePoints(int sine, int cosine, int K)
+    {
+        long totalPts = 0;
+
+        if (K == 1)
+        {
+            totalPts += getCosPoints(cosine);
+            for (int cos = 1; cos <= cosine; cos++)
+            {
+                if (cos + 1 <= sine)
+                {
+                    totalPts -= getCosPoints(cos, cos + 1);
+                }
+            }
+        }
+        else
+        {
+            for (int cos = K - 1; cos <= cosine && cos > 0; cos++)
+            {
+                if (cos + 1 <= sine)
+                {
+                    totalPts += getCosPoints(cos, cos + 1);
+                }
+            }
+        }
+   
+        return totalPts;
     }
 
     private static long getCosPoints(int cos)
@@ -107,14 +140,12 @@ class Program
         return (long)Math.Pow(2, cos);
     }
 
-    private static long getCosPoints(int cos, int sine, int K)
+    private static long getCosPoints(int cos, int sine)
     {
 
         long points = 0;
-        if (sine >= K)
-        {
-            points = (long)Math.Ceiling(getSinePoints(sine) / Math.Pow(2, cos));
-        }
+        points = (long)Math.Floor((double)getSinePoints(sine) / getCosPoints(cos));
+        
         return points;
     }
 
