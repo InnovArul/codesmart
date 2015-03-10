@@ -58,7 +58,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DevuClass.cs" />
+    <None Include="DevuClass.cs" />
+    <Compile Include="RNG.cs" />
     <None Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
