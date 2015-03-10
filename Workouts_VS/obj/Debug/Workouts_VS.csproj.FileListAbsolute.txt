@@ -1,6 +1,0 @@
-D:\My.Soft.Dev\codesmart\Workouts_VS\bin\Debug\Workouts_VS.exe.config
-D:\My.Soft.Dev\codesmart\Workouts_VS\obj\Debug\Workouts_VS.csprojResolveAssemblyReference.cache
-D:\My.Soft.Dev\codesmart\Workouts_VS\bin\Debug\Workouts_VS.exe
-D:\My.Soft.Dev\codesmart\Workouts_VS\bin\Debug\Workouts_VS.pdb
-D:\My.Soft.Dev\codesmart\Workouts_VS\obj\Debug\Workouts_VS.exe
-D:\My.Soft.Dev\codesmart\Workouts_VS\obj\Debug\Workouts_VS.pdb

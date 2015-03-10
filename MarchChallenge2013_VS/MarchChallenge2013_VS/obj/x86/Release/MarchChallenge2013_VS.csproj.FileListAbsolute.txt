@@ -1,4 +1,0 @@
-D:\My.Soft.Dev\codesmart\MarchChallenge2013_VS\MarchChallenge2013_VS\bin\Release\MarchChallenge2013_VS.exe
-D:\My.Soft.Dev\codesmart\MarchChallenge2013_VS\MarchChallenge2013_VS\bin\Release\MarchChallenge2013_VS.pdb
-D:\My.Soft.Dev\codesmart\MarchChallenge2013_VS\MarchChallenge2013_VS\obj\x86\Release\MarchChallenge2013_VS.exe
-D:\My.Soft.Dev\codesmart\MarchChallenge2013_VS\MarchChallenge2013_VS\obj\x86\Release\MarchChallenge2013_VS.pdb
