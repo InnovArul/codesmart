@@ -1,0 +1,8 @@
+LIBRARY	"ZedGraphWrapper"
+
+EXPORTS
+    StartGraph
+    AppendPoints
+    AppendPoint
+    PublishGraph
+    DiscardGraph

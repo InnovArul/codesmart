@@ -1,0 +1,59 @@
+Windows:
+http://lanceme.blogspot.de/2013/06/windows-7-internet-sharing-for.html
+
+Ubuntu:
+http://robotic-controls.com/learn/beaglebone/beaglebone-internet-over-usb-only
+
+#eth0 is Ubuntu's internet interface, eth3 is the BeagleBone USB connection
+
+Sure, the BeagleBone and BeagleBone Black come with an ethernet port on them, but why have to get another cable out? You might not even be anywhere near the router. The BeagleBone images automatically do network communcations over USB, as shown by how you can go to 192.168.7.2 from your browser to see the BeagleBone start page and http://192.168.7.2:3000/ to use the Cloud9 editor hosted on the BeagleBone. The problem is that the host computers do not usually relay network traffic to new interfaces. I don't know why not. It would be nice if you could just connect stuff to any connection and it'd always work, but it's not hard to set up NAT and such once you know how to do it. The connection over USB might be slighlty slower than the dedicated connection, since USB is slower and is sharing the connection with things JTAG communication and mass storage. For all I know, though, the ethernet on the BeagleBone is actually controlled by the same USB controller, so it might not be at all different!
+
+On the BeagleBone
+
+ifconfig usb0 192.168.7.2
+route add default gw 192.168.7.1
+
+On Linux computer:
+
+sudo su
+#eth0 is my internet facing interface, eth3 is the BeagleBone USB connection
+ifconfig eth3 192.168.7.1
+iptables --table nat --append POSTROUTING --out-interface eth0 -j MASQUERADE
+iptables --append FORWARD --in-interface eth3 -j ACCEPT
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+(or)
+#eth2 is my internet facing interface, eth3 is the BeagleBone USB connection
+
+ifconfig eth3 192.168.7.1
+iptables --table nat --append POSTROUTING --out-interface eth2 -j MASQUERADE
+iptables --append FORWARD --in-interface eth3 -j ACCEPT
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+On a Windows computer, I would think you could use the graphical Internet Connection Sharing feature.
+
+problems finding a host (unknown host google.com) so I add:
+
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+
+And all works like magic
+
+
+USERNAME/PASSWORD:
+
+root sathyam
+
+---------------------------------------------------------------------------
+
+Now we can directly 'ssh 192.168.1.34 -l root' to beagle bone:
+
+for ping, uncheck : Dlink router => Wireless =>  Wireless basic => Enable MultiAP Isolation
+
+check arp -a on windows & Linux AND check the address resolution table. (angstrom doesn't contain arp: opkg install net-tools)
+
+So far: used ip addresses for BBB : 
+USB:  ssh 192.168.7.2 -l root
+Ethernet:  ssh 192.168.1.34 -l root
+
+To make #ping# possible, check the firewall settings to allow 'ICMP Echo reply type' to be allowed.
+(check all the firewalls - Windows, Antivirus if any)

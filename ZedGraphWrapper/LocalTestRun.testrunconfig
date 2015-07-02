@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRunConfiguration name="Local Test Run" id="660f5e83-c15f-4182-acd0-17dfe2b7d1bc" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <Description>This is a default test run configuration for a local test run.</Description>
+  <Deployment>
+    <DeploymentItem filename="ZedGraph.dll" />
+    <DeploymentItem filename="Debug\" />
+  </Deployment>
+  <Hosts skipUnhostableTests="false" />
+  <TestTypeSpecific />
+</TestRunConfiguration>

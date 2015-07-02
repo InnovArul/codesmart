@@ -1,0 +1,25 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly ZedGraphWrapper, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly ZedGraph, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=None, flags=None
+Assembly System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class XYGraph: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getInstance(): PrivateScope, Public, Static, HideBySig
+    StartGraph(SByte*, SByte*, SByte*): PrivateScope, Public, HideBySig
+    AppendPoints(SByte*, Double*, Double*, Int32, SByte*): PrivateScope, Public, HideBySig
+    AppendPoint(SByte*, Double, Double): PrivateScope, Public, HideBySig
+    PublishGraph(SByte*): PrivateScope, Public, HideBySig
+    DiscardGraph(): PrivateScope, Public, HideBySig
+    GetErrorString(Int32): PrivateScope, Public, Static, HideBySig
