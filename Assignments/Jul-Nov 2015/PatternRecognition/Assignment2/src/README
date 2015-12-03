@@ -1,0 +1,22 @@
+to execute the code, call the function 'doall(option)' from matlab.
+
+code is developed with Matlab 2011a
+
+% doall API carries out all the activites for loading the data, 
+% building the bayesian model, classifying the testdata, plotting different curves 
+%
+% For loading the data, the data file should be present in the folder
+% (./data).
+%
+% parameter : dataOption
+% specifies which dataset has to be loaded.
+% example:
+%   doall(4); % executes the bayesian classifier process for real world
+%   dataset
+%
+% different data options are as follows:
+% 1 - Linearly separable dataset
+% 2 - Nonlinearly separable dataset
+% 3 - Overlapping dataset
+% 4 - Real world dataset
+%

@@ -1,0 +1,25 @@
+all the source files related to GMM & HMM classification algorithm implemented for Assignment-3 are placed in this folder.
+
+Assumption:
+The dataset is placed under the directory ./data
+The hmm C-code is placed in the directory ./hmm
+
+to execute test for GMM & HMM:
+-------------------------------
+
+doallGMM(<number of clusters>, <dataset type>)
+
+dataset type:
+
+1: image dataset
+2: Handwritten characters data set
+3: spiral dataset
+4: digit dataset
+5: video dataset
+
+to execute test for DTW:
+----------------------------
+
+doallGMM.m file has to be changed to uncomment the line 248 to perform DTW test
+
+

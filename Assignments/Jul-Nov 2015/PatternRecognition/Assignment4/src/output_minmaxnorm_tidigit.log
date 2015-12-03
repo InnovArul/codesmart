@@ -1,0 +1,13 @@
+
+arul@Arul [08:04:58] [/media/Buffer/IITM/CS6690PatternRecognition/Assignment4/src/hmm_tidigit] 
+-> % HVite -H hmm6/macros -H hmm6/hmmdefs -S lists/allTestFiles -l '*' -i recognitionout.mlf -w cfg/wordnet -p 0.0 -s 5.0 dics/dict dics/models1
+arul@Arul [08:10:07] [/media/Buffer/IITM/CS6690PatternRecognition/Assignment4/src/hmm_tidigit] 
+-> % HResults -I mlf/target.mlf dics/models1 recognitionout.mlf                                                                                 
+====================== HTK Results Analysis =======================
+  Date: Sun Nov 29 20:10:53 2015
+  Ref : mlf/target.mlf
+  Rec : recognitionout.mlf
+------------------------ Overall Results --------------------------
+SENT: %Correct=0.00 [H=0, S=8700, N=8700]
+WORD: %Corr=69.69, Acc=17.18 [H=19920, D=2646, S=6017, I=15010, N=28583]
+===================================================================
