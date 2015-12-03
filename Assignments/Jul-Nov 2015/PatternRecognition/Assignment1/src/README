@@ -1,0 +1,18 @@
+This folder contains code files (python) related to the Assignment-1 of CS6690 pattern recognition.
+
+source files:
+----------------------------
+There are 2 main files & 1 helper file (library) as mentioned below.
+
+pr_helper.py  : A python module which contains reusable APIs for image_processing.py, linear_regression.py modules
+linear_regression.py : Python module which takes input as the datasets for linear regression & fits polynomial models to the data
+image_processing.py: Python module to decompose the image (SVD, EVD) and analyse the properties
+
+----------------------------------------------------------------------------------------------------
+
+Prerequisites:
+----------------------------
+Python 2.7.6
+sudo apt-get install numpy
+sudo apt-get install scipy
+sudo apt-get install opencv2

@@ -1,0 +1,10 @@
+ HResults -I mlf/target.mlf dics/models1 recognitionout.mlf
+ 
+ ====================== HTK Results Analysis =======================
+  Date: Sat Nov 28 02:27:10 2015
+  Ref : mlf/target.mlf
+  Rec : recognitionout.mlf
+------------------------ Overall Results --------------------------
+SENT: %Correct=0.00 [H=0, S=8700, N=8700]
+WORD: %Corr=71.09, Acc=19.69 [H=20320, D=3331, S=4932, I=14692, N=28583]
+===================================================================
