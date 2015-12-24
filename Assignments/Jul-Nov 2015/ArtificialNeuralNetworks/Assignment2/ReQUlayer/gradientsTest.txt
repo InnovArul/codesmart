@@ -1,0 +1,252 @@
+arul@Arul:~/workspace/Assignment2/Assignment2Starter/ReQUlayer$ qlua gradcheck.lua 
+actual gradient : 
+
+-0.6398
+-1.2797
+-1.9195
+-2.5593
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.6398
+ 0.0000
+ 1.1472
+ 0.0000
+ 0.5991
+ 0.0000
+-1.7463
+ 0.0000
+ 2.3553
+ 1.2300
+-3.5853
+[torch.DoubleTensor of size 19]
+
+estimated gradient : 
+
+-0.6398
+-1.2797
+-1.9195
+-2.5593
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.6398
+ 0.0000
+ 1.1472
+ 0.0000
+ 0.5991
+ 0.0000
+-1.7463
+ 0.0000
+ 2.3553
+ 1.2300
+-3.5853
+[torch.DoubleTensor of size 19]
+
+symmetric relative error : 7.6837483412452e-07 --> cosine similarity : 0.99999801448985
+
+
+arul@Arul:~/workspace/Assignment2/Assignment2Starter/ReQUlayer$ qlua gradcheck.lua 
+actual gradient : 
+
+ 0.2737
+ 0.5473
+ 0.8210
+ 1.0947
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.2737
+ 0.0000
+ 0.0204
+ 0.0000
+-0.0063
+ 0.0000
+-0.0141
+ 0.0000
+ 8.1778
+-2.5319
+-5.6459
+[torch.DoubleTensor of size 19]
+
+estimated gradient : 
+
+ 0.2737
+ 0.5473
+ 0.8210
+ 1.0947
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.2737
+ 0.0000
+ 0.0204
+ 0.0000
+-0.0063
+ 0.0000
+-0.0141
+ 0.0000
+ 8.1778
+-2.5319
+-5.6459
+[torch.DoubleTensor of size 19]
+
+symmetric relative error : 5.755435195488e-07 --> cosine similarity : 1.0000012861705
+
+
+arul@Arul:~/workspace/Assignment2/Assignment2Starter/ReQUlayer$ qlua gradcheck.lua 
+actual gradient : 
+
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 4.2829
+ 1.1902
+-5.4731
+[torch.DoubleTensor of size 19]
+
+estimated gradient : 
+
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 4.2829
+ 1.1902
+-5.4731
+[torch.DoubleTensor of size 19]
+
+symmetric relative error : 4.2462450381861e-08 --> cosine similarity : 0.99999997263226
+
+
+arul@Arul:~/workspace/Assignment2/Assignment2Starter/ReQUlayer$ qlua gradcheck.lua 
+actual gradient : 
+
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 6.8093
+ 2.0321
+-8.8413
+[torch.DoubleTensor of size 19]
+
+estimated gradient : 
+
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 6.8093
+ 2.0321
+-8.8414
+[torch.DoubleTensor of size 19]
+
+symmetric relative error : 8.6832645133895e-07 --> cosine similarity : 1.0000021488807
+
+
+arul@Arul:~/workspace/Assignment2/Assignment2Starter/ReQUlayer$ qlua gradcheck.lua 
+actual gradient : 
+
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 4.3769
+-2.1802
+-2.1967
+[torch.DoubleTensor of size 19]
+
+estimated gradient : 
+
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 4.3769
+-2.1802
+-2.1967
+[torch.DoubleTensor of size 19]
+
+symmetric relative error : 5.3452354416828e-07 --> cosine similarity : 0.99999947034695
+
+
+arul@Arul:~/workspace/Assignment2/Assignment2Starter/ReQUlayer$ 
+

@@ -1,0 +1,120 @@
+\documentclass[]{article}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\newgeometry{left=3cm, top=2cm, bottom=2cm}
+
+\begin{document}
+	\title{Artifical Neural Networks for Computer Vision \\ Assignment-1 (CUDA programming)}
+	\author{Arulkumar S (CS15S023)}
+	\maketitle
+
+    \section{Dot product of two vectors}
+    
+    \href{./VectorMultiply.cu}{Source code}
+    
+    \subsection{Approach}
+    
+    \begin{list}{*}{}
+    	\item The program asks for an input (Number of components in the vectors) from the user
+    	
+    	\item The program randomly generates two vectors whose components count is equal to the Number of components given by the user
+    	
+      	\item  The equivalent component (or) co-efficient of all the basis (indexes) are passed to each thread which is running in device.
+      	
+    	\item The number of threads in each block is 512 \& the number of blocks is computed dynamically according to the Number of components in the vector. \newline
+    	
+    	Number of Blocks = (Vector\_Dimension \% 512) + 1; \newline
+    	Number of threads = 512
+    	
+		\item To compute dot-product, Each thread will multiply the appropriate index-ed component (identified by BlockID \& ThreadID) of given vectors.
+		There is a shared variable available for all threads to store the product of appropriate components of the two vectors. 
+		      
+		\item At the end, the main program will calculate the addition of all the products which are stored in shared variable and write the output to the data file
+		
+    \end{list}
+    
+    \subsection{Why this approach?}
+    
+    To avoid the sequential processing of each componenet of the vector (going through all the components one-by-one and to calculate the product, add them), I have used multiple blocks and 512 threads per each block, so that the product of vector components will be done in parallel.
+    
+    \subsection{Observed Results}
+    
+    Average time taken for Vectors with 10000 components
+    
+    \begin{list}{*}{}
+     	\item PC execution:  90 to 100 microseconds
+    	\item GPU emulation execution: 15 to 25 microseconds
+    \end{list} 
+   
+   \subsection{Output file}
+   
+	\href{./Task1_data.txt}{Task1 output file}
+    
+ \newpage
+ \section{Multiplication of two matrices}
+ 
+ \href{./MatrixMultiply.cu}{Source code}
+ 
+ \subsection{Approach}
+ 
+	 \begin{list}{*}{}
+ 	\item The program will ask for the total number of rows and columns for each matrix.
+ 	\item The program will randomly generate two matrices according to the total number of rows \& columns given by the user
+ 	\item The program calls the device function with \newline 
+ 	Number of blocks = Total rows of First matrix \newline
+ 	Number of Threads per block = Total columns of second matrix 	
+ 	\item Each thread of every block will take the elements of particular row from Matrix-1 (identified by BlockID) \& multiply them with appropriate column in Matrix-2 (identified by ThreadID), store the result in appropriate index of output parameter.
+ 	\item After the device execution completed, the result is copied to Host \& printed into report text file.
+ 	
+	 \end{list}
+ 
+	 \subsection{Why this approach?}
+ 
+	 To avoid the sequential processing of each row of Matrix-1 + column of Matrix-2 multiplication (going through all the rows of Matrix-1 one-by-one and to multiply them with columns of Matrix-2, add them), I have used multiple blocks and threads to parallelize the multiplication into GPU cores.
+ 
+	 \subsection{Observed Results}
+ 
+     Average time taken for Matrix-1 (2000 x 400), Matrix-2 (400 x 500) is
+     
+     \begin{list}{*}{}
+     	\item PC execution:  3.2 to 3.5 seconds
+     	\item GPU emulation execution: 20 to 30 microseconds
+     \end{list} 
+     
+	\subsection{Output file}
+    \href{./Task2_data.txt}{Task2 output file}
+    
+  \newpage
+ \section{Convolution of a big matrix A over a small matrix S}
+ 
+  \href{./MatrixConvolution.cu}{Source code}
+  
+ \subsection{Approach}
+ 
+ \begin{list}{*}{}
+ 	\item The row count \& column count of (Big) Matrix to be convoluted \& the (small) filter matrix is to be inputted by the user.
+ 	\item The program will randomly generate contents of the Big matrix \& small matrix according to the dimension given by the user.
+ 	\item After having the two matrices ready, the program launches the device function to compute convolution for each element of the big matrix.
+ 	\item the number of blocks = the row count of the big matrix \newline
+	 	 the number of threads = the column count of the big matrix
+	\item each thread in every block will calculate the convolution for a matrix element (identified by BlockID \& ThreadID) \& store it in appropriate index of "Output" parameter
+ \end{list}
+ 
+ \subsection{Why this approach?}
+ 
+ To avoid the sequential processing to compute convolution for each matrix element (going through all the big matrix elements one-by-one and to calculate the convolution), I have tried to use the parallel processing power of GPU and parallelize the convolution calculation of each matrix element.
+ 
+ \subsection{Observed Results}
+      Average time taken for Big matrix (500 x 500), Filter matrix (5 x 5) is
+      
+      \begin{list}{*}{}
+      	\item PC execution:  100 to 110 milli-seconds
+      	\item GPU emulation execution: 15 to 25 microseconds
+      \end{list} 
+      
+ 
+ \subsection{Output file}
+ \href{./Task3_data.txt}{Task3 output file}
+ 
+\end{document}
