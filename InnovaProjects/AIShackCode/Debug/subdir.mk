@@ -4,13 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../RandomNoise.cpp 
+../normalizedRGB.cpp 
 
 OBJS += \
-./RandomNoise.o 
+./normalizedRGB.o 
 
 CPP_DEPS += \
-./RandomNoise.d 
+./normalizedRGB.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
