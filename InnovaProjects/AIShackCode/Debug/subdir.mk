@@ -4,13 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../normalizedRGB.cpp 
+../Thresholding.cpp 
 
 OBJS += \
-./normalizedRGB.o 
+./Thresholding.o 
 
 CPP_DEPS += \
-./normalizedRGB.d 
+./Thresholding.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

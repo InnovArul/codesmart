@@ -64,11 +64,11 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1447899964.773682856" name="RandomNoise.cpp" rcbsApplicability="disable" resourcePath="RandomNoise.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.592379471.978846697">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.592379471.978846697" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.592379471"/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1447899964.82347336" name="normalizedRGB.cpp" rcbsApplicability="disable" resourcePath="normalizedRGB.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.592379471.1694121309">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.592379471.1694121309" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.592379471"/>
 					</fileInfo>
 					<sourceEntries>
-						<entry excluding="RandomNoise.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="normalizedRGB.cpp|RandomNoise.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -139,6 +139,13 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/Tutorials"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/Tutorials"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>
