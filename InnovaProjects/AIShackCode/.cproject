@@ -64,11 +64,11 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1447899964.82347336" name="normalizedRGB.cpp" rcbsApplicability="disable" resourcePath="normalizedRGB.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.592379471.1694121309">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.592379471.1694121309" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.592379471"/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1447899964.1394921064" name="Thresholding.cpp" rcbsApplicability="disable" resourcePath="Thresholding.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.592379471.2052245604">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.592379471.2052245604" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.592379471"/>
 					</fileInfo>
 					<sourceEntries>
-						<entry excluding="normalizedRGB.cpp|RandomNoise.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Thresholding.cpp|normalizedRGB.cpp|RandomNoise.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

@@ -42,6 +42,8 @@ int main()
     cvShowImage("red", redChannel);
     cvWaitKey(0);
 
+    cvSaveImage("./pics/thresholdedRed.jpg", redChannel);
+
     cvReleaseImage(&image); cvReleaseImage(&redChannel); cvReleaseImage(&greenChannel); cvReleaseImage(&blueChannel);
     cvDestroyAllWindows();
     return 0;

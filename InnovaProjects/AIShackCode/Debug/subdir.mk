@@ -4,13 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../Thresholding.cpp 
+../contourFinding.cpp 
 
 OBJS += \
-./Thresholding.o 
+./contourFinding.o 
 
 CPP_DEPS += \
-./Thresholding.d 
+./contourFinding.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
