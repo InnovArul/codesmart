@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Mon Mar 07 11:51:14 IST 2016
+markTmpDer=true
+builderNum=2
+outputDir=report/
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=report
+mainTexFile=MLforCVassignment1.tex
+outputFile=MLforCVassignment1.pdf
+langSpell=
+markDer=true
+srcDir=report/

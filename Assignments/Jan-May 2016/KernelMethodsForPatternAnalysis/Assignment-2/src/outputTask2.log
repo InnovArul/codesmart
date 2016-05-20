@@ -1,0 +1,960 @@
+***************************************************************************
+model_features_20_nu_0.15_gamma_0.01
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    114.00000     22.00000     37.00000     16.00000     37.00000
+  class2_Trgt     46.00000    242.00000     17.00000     27.00000     43.00000
+  class3_Trgt     63.00000     23.00000     89.00000     14.00000     48.00000
+  class4_Trgt     59.00000     56.00000     36.00000    332.00000     84.00000
+  class5_Trgt    109.00000     77.00000     70.00000     80.00000    228.00000
+ 
+TRAINING- Overall accuracy :51.0411
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     10.00000      5.00000     11.00000      6.00000      6.00000
+  class2_Trgt      3.00000     40.00000      7.00000      7.00000      5.00000
+  class3_Trgt     14.00000      6.00000      8.00000      5.00000      6.00000
+  class4_Trgt     11.00000     16.00000     10.00000     41.00000     17.00000
+  class5_Trgt     26.00000     12.00000     17.00000     16.00000     23.00000
+ 
+VALIDATION- Overall accuracy :37.1951
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt      9.00000      9.00000      8.00000      7.00000      5.00000
+  class2_Trgt     10.00000     34.00000      6.00000      6.00000      7.00000
+  class3_Trgt      7.00000      5.00000      9.00000      7.00000     12.00000
+  class4_Trgt     17.00000     14.00000      7.00000     41.00000     16.00000
+  class5_Trgt     16.00000     20.00000     13.00000     20.00000     26.00000
+ 
+TESTING- Overall accuracy :35.9517
+***************************************************************************
+model_features_20_nu_0.15_gamma_0.02
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    131.00000     17.00000     31.00000     21.00000     26.00000
+  class2_Trgt     31.00000    293.00000      7.00000     16.00000     28.00000
+  class3_Trgt     48.00000     18.00000    122.00000     10.00000     39.00000
+  class4_Trgt     45.00000     37.00000     17.00000    409.00000     59.00000
+  class5_Trgt     71.00000     56.00000     65.00000     86.00000    286.00000
+ 
+TRAINING- Overall accuracy :63.0269
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     11.00000      5.00000      8.00000      7.00000      7.00000
+  class2_Trgt      3.00000     43.00000      6.00000      6.00000      4.00000
+  class3_Trgt     12.00000      5.00000      9.00000      4.00000      9.00000
+  class4_Trgt     16.00000     11.00000      7.00000     43.00000     18.00000
+  class5_Trgt     15.00000     14.00000     14.00000     25.00000     26.00000
+ 
+VALIDATION- Overall accuracy :40.2439
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     11.00000      4.00000      9.00000      8.00000      6.00000
+  class2_Trgt      9.00000     36.00000      5.00000      5.00000      8.00000
+  class3_Trgt      6.00000      7.00000      7.00000      5.00000     15.00000
+  class4_Trgt     14.00000     17.00000      5.00000     46.00000     13.00000
+  class5_Trgt      9.00000     19.00000      8.00000     24.00000     35.00000
+ 
+TESTING- Overall accuracy :40.7855
+***************************************************************************
+model_features_20_nu_0.15_gamma_0.03
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    150.00000     11.00000     27.00000     15.00000     23.00000
+  class2_Trgt     17.00000    327.00000            0     11.00000     20.00000
+  class3_Trgt     45.00000     18.00000    135.00000     11.00000     28.00000
+  class4_Trgt     36.00000     29.00000     17.00000    438.00000     47.00000
+  class5_Trgt     57.00000     44.00000     69.00000     99.00000    295.00000
+ 
+TRAINING- Overall accuracy :68.3088
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     10.00000      4.00000      9.00000     11.00000      4.00000
+  class2_Trgt      3.00000     44.00000      6.00000      6.00000      3.00000
+  class3_Trgt     11.00000      5.00000     10.00000      4.00000      9.00000
+  class4_Trgt     18.00000     11.00000      6.00000     45.00000     15.00000
+  class5_Trgt     16.00000     12.00000     18.00000     23.00000     25.00000
+ 
+VALIDATION- Overall accuracy :40.8537
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     13.00000      5.00000      7.00000      5.00000      8.00000
+  class2_Trgt      5.00000     39.00000      4.00000      8.00000      7.00000
+  class3_Trgt      5.00000      8.00000      8.00000      3.00000     16.00000
+  class4_Trgt     15.00000     19.00000      9.00000     42.00000     10.00000
+  class5_Trgt      9.00000     18.00000     11.00000     21.00000     36.00000
+ 
+TESTING- Overall accuracy :41.6918
+***************************************************************************
+model_features_20_nu_0.25_gamma_0.01
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    110.00000     21.00000     38.00000     26.00000     31.00000
+  class2_Trgt     20.00000    294.00000      6.00000     32.00000     23.00000
+  class3_Trgt     39.00000     19.00000    113.00000     15.00000     51.00000
+  class4_Trgt     42.00000     31.00000     25.00000    399.00000     70.00000
+  class5_Trgt     60.00000     61.00000     45.00000     90.00000    308.00000
+ 
+TRAINING- Overall accuracy :62.1635
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     11.00000      3.00000     11.00000      7.00000      6.00000
+  class2_Trgt      4.00000     46.00000      3.00000      5.00000      4.00000
+  class3_Trgt      9.00000      4.00000     10.00000      5.00000     11.00000
+  class4_Trgt     14.00000      8.00000      6.00000     56.00000     11.00000
+  class5_Trgt     17.00000     15.00000     14.00000     16.00000     32.00000
+ 
+VALIDATION- Overall accuracy :47.2561
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     11.00000      6.00000      8.00000      7.00000      6.00000
+  class2_Trgt      9.00000     37.00000      4.00000      9.00000      4.00000
+  class3_Trgt      3.00000      5.00000     14.00000      3.00000     15.00000
+  class4_Trgt     12.00000     15.00000      2.00000     50.00000     16.00000
+  class5_Trgt     13.00000     14.00000     12.00000     19.00000     37.00000
+ 
+TESTING- Overall accuracy :45.0151
+***************************************************************************
+model_features_20_nu_0.25_gamma_0.02
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    148.00000     17.00000     27.00000     17.00000     17.00000
+  class2_Trgt     16.00000    303.00000      4.00000     34.00000     18.00000
+  class3_Trgt     39.00000     17.00000    121.00000     19.00000     41.00000
+  class4_Trgt     20.00000     28.00000     12.00000    460.00000     47.00000
+  class5_Trgt     36.00000     36.00000     39.00000     77.00000    376.00000
+ 
+TRAINING- Overall accuracy :71.5084
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     13.00000      4.00000      8.00000      8.00000      5.00000
+  class2_Trgt      1.00000     47.00000      4.00000      5.00000      5.00000
+  class3_Trgt     13.00000      3.00000     10.00000      3.00000     10.00000
+  class4_Trgt     14.00000      9.00000      3.00000     54.00000     15.00000
+  class5_Trgt     14.00000     13.00000     15.00000     22.00000     30.00000
+ 
+VALIDATION- Overall accuracy :46.9512
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt      9.00000      7.00000      8.00000      7.00000      7.00000
+  class2_Trgt      4.00000     43.00000      3.00000      6.00000      7.00000
+  class3_Trgt      9.00000      5.00000     10.00000      4.00000     12.00000
+  class4_Trgt      8.00000     14.00000      5.00000     53.00000     15.00000
+  class5_Trgt      9.00000     14.00000     11.00000     24.00000     37.00000
+ 
+TESTING- Overall accuracy :45.9215
+***************************************************************************
+model_features_20_nu_0.25_gamma_0.03
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    148.00000     22.00000     22.00000     21.00000     13.00000
+  class2_Trgt     11.00000    306.00000      7.00000     32.00000     19.00000
+  class3_Trgt     39.00000     22.00000    133.00000     19.00000     24.00000
+  class4_Trgt     22.00000     20.00000     15.00000    472.00000     38.00000
+  class5_Trgt     19.00000     32.00000     21.00000     50.00000    442.00000
+ 
+TRAINING- Overall accuracy :76.2316
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     10.00000      4.00000      9.00000      8.00000      7.00000
+  class2_Trgt      1.00000     45.00000      4.00000      6.00000      6.00000
+  class3_Trgt      5.00000      8.00000     12.00000      5.00000      9.00000
+  class4_Trgt     10.00000     11.00000      5.00000     51.00000     18.00000
+  class5_Trgt     11.00000     11.00000     14.00000     22.00000     36.00000
+ 
+VALIDATION- Overall accuracy :46.9512
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt      8.00000      9.00000      8.00000      7.00000      6.00000
+  class2_Trgt      3.00000     41.00000      6.00000      6.00000      7.00000
+  class3_Trgt     10.00000      6.00000      9.00000      4.00000     11.00000
+  class4_Trgt     10.00000     11.00000      4.00000     56.00000     14.00000
+  class5_Trgt      5.00000     18.00000     11.00000     20.00000     41.00000
+ 
+TESTING- Overall accuracy :46.8278
+***************************************************************************
+model_features_50_nu_0.15_gamma_0.01
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    183.00000      5.00000     24.00000      5.00000      9.00000
+  class2_Trgt      4.00000    360.00000      1.00000      5.00000      5.00000
+  class3_Trgt     35.00000     13.00000    166.00000      3.00000     20.00000
+  class4_Trgt      9.00000     12.00000     11.00000    502.00000     33.00000
+  class5_Trgt     40.00000     28.00000     32.00000     47.00000    417.00000
+ 
+TRAINING- Overall accuracy :82.6816
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     10.00000      6.00000      6.00000      9.00000      7.00000
+  class2_Trgt      7.00000     42.00000      7.00000      3.00000      3.00000
+  class3_Trgt     12.00000      1.00000     10.00000      6.00000     10.00000
+  class4_Trgt     18.00000      9.00000      3.00000     54.00000     11.00000
+  class5_Trgt     17.00000      8.00000      9.00000     13.00000     47.00000
+ 
+VALIDATION- Overall accuracy :49.6951
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     12.00000      5.00000      7.00000      8.00000      6.00000
+  class2_Trgt     10.00000     41.00000      2.00000      7.00000      3.00000
+  class3_Trgt     10.00000      4.00000     14.00000      4.00000      8.00000
+  class4_Trgt     13.00000      8.00000      4.00000     61.00000      9.00000
+  class5_Trgt     14.00000     11.00000     11.00000     19.00000     40.00000
+ 
+TESTING- Overall accuracy :50.7553
+***************************************************************************
+model_features_50_nu_0.15_gamma_0.02
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    216.00000      3.00000      4.00000      2.00000      1.00000
+  class2_Trgt      2.00000    366.00000      2.00000      3.00000      2.00000
+  class3_Trgt      3.00000      6.00000    226.00000      1.00000      1.00000
+  class4_Trgt      1.00000      3.00000      5.00000    555.00000      3.00000
+  class5_Trgt      1.00000      3.00000      1.00000            0    559.00000
+ 
+TRAINING- Overall accuracy :97.613
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     12.00000      4.00000      7.00000      8.00000      7.00000
+  class2_Trgt      6.00000     41.00000      4.00000      4.00000      7.00000
+  class3_Trgt     10.00000      2.00000     13.00000      7.00000      7.00000
+  class4_Trgt     12.00000      8.00000      6.00000     57.00000     12.00000
+  class5_Trgt     10.00000     12.00000     11.00000     16.00000     45.00000
+ 
+VALIDATION- Overall accuracy :51.2195
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     19.00000      3.00000      4.00000      7.00000      5.00000
+  class2_Trgt      7.00000     39.00000      4.00000      8.00000      5.00000
+  class3_Trgt     11.00000      2.00000     14.00000      3.00000     10.00000
+  class4_Trgt     10.00000     10.00000      4.00000     57.00000     14.00000
+  class5_Trgt      9.00000     11.00000     12.00000     18.00000     45.00000
+ 
+TESTING- Overall accuracy :52.568
+***************************************************************************
+model_features_50_nu_0.15_gamma_0.03
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    220.00000      3.00000            0      2.00000      1.00000
+  class2_Trgt      2.00000    364.00000      2.00000      4.00000      3.00000
+  class3_Trgt            0      5.00000    231.00000      1.00000            0
+  class4_Trgt      2.00000      3.00000      4.00000    555.00000      3.00000
+  class5_Trgt      1.00000      3.00000      1.00000            0    559.00000
+ 
+TRAINING- Overall accuracy :97.9685
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     12.00000      4.00000      7.00000      9.00000      6.00000
+  class2_Trgt      6.00000     42.00000      3.00000      5.00000      6.00000
+  class3_Trgt     12.00000      1.00000     12.00000      7.00000      7.00000
+  class4_Trgt     12.00000      8.00000      6.00000     59.00000     10.00000
+  class5_Trgt     11.00000     12.00000     10.00000     16.00000     45.00000
+ 
+VALIDATION- Overall accuracy :51.8293
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     18.00000      2.00000      5.00000      7.00000      6.00000
+  class2_Trgt      8.00000     40.00000      2.00000      8.00000      5.00000
+  class3_Trgt     13.00000      2.00000     15.00000      3.00000      7.00000
+  class4_Trgt     10.00000     10.00000      6.00000     58.00000     11.00000
+  class5_Trgt      8.00000     13.00000     15.00000     16.00000     43.00000
+ 
+TESTING- Overall accuracy :52.568
+***************************************************************************
+model_features_50_nu_0.25_gamma_0.01
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    172.00000     13.00000     19.00000     12.00000     10.00000
+  class2_Trgt     13.00000    324.00000      2.00000     26.00000     10.00000
+  class3_Trgt     25.00000     24.00000    159.00000     21.00000      8.00000
+  class4_Trgt      5.00000     19.00000     13.00000    513.00000     17.00000
+  class5_Trgt     11.00000     14.00000     11.00000     12.00000    516.00000
+ 
+TRAINING- Overall accuracy :85.5256
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     11.00000      5.00000      9.00000      9.00000      4.00000
+  class2_Trgt      4.00000     47.00000      4.00000      2.00000      5.00000
+  class3_Trgt     10.00000      3.00000     12.00000      8.00000      6.00000
+  class4_Trgt      7.00000     10.00000      5.00000     61.00000     12.00000
+  class5_Trgt     11.00000      8.00000      9.00000     13.00000     53.00000
+ 
+VALIDATION- Overall accuracy :56.0976
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     17.00000      3.00000      4.00000      9.00000      5.00000
+  class2_Trgt      6.00000     41.00000      3.00000      7.00000      6.00000
+  class3_Trgt     15.00000      2.00000     12.00000      3.00000      8.00000
+  class4_Trgt      6.00000     10.00000      4.00000     61.00000     14.00000
+  class5_Trgt      7.00000      9.00000     10.00000     21.00000     48.00000
+ 
+TESTING- Overall accuracy :54.0785
+***************************************************************************
+model_features_50_nu_0.25_gamma_0.02
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    184.00000     14.00000      4.00000     14.00000     10.00000
+  class2_Trgt     11.00000    325.00000      3.00000     26.00000     10.00000
+  class3_Trgt      3.00000     20.00000    186.00000     20.00000      8.00000
+  class4_Trgt      7.00000     16.00000      9.00000    514.00000     21.00000
+  class5_Trgt      8.00000     18.00000      9.00000     12.00000    517.00000
+ 
+TRAINING- Overall accuracy :87.6587
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     13.00000      6.00000      5.00000      8.00000      6.00000
+  class2_Trgt      4.00000     44.00000      5.00000      4.00000      5.00000
+  class3_Trgt     10.00000      1.00000     12.00000      9.00000      7.00000
+  class4_Trgt      8.00000      7.00000      6.00000     58.00000     16.00000
+  class5_Trgt      9.00000     11.00000      8.00000     14.00000     52.00000
+ 
+VALIDATION- Overall accuracy :54.5732
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     18.00000      3.00000      3.00000     10.00000      4.00000
+  class2_Trgt      5.00000     44.00000      4.00000      6.00000      4.00000
+  class3_Trgt     13.00000      1.00000     16.00000      3.00000      7.00000
+  class4_Trgt      6.00000      9.00000      5.00000     63.00000     12.00000
+  class5_Trgt      4.00000      9.00000     12.00000     17.00000     53.00000
+ 
+TESTING- Overall accuracy :58.6103
+***************************************************************************
+model_features_50_nu_0.25_gamma_0.03
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    182.00000     14.00000      6.00000     14.00000     10.00000
+  class2_Trgt     10.00000    326.00000      3.00000     26.00000     10.00000
+  class3_Trgt      3.00000     20.00000    185.00000     21.00000      8.00000
+  class4_Trgt      7.00000     15.00000      8.00000    516.00000     21.00000
+  class5_Trgt      7.00000     18.00000      8.00000     10.00000    521.00000
+ 
+TRAINING- Overall accuracy :87.8619
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     13.00000      6.00000      6.00000      7.00000      6.00000
+  class2_Trgt      4.00000     44.00000      4.00000      4.00000      6.00000
+  class3_Trgt     10.00000      2.00000     12.00000      7.00000      8.00000
+  class4_Trgt      8.00000      7.00000      5.00000     60.00000     15.00000
+  class5_Trgt      9.00000     10.00000      7.00000     14.00000     54.00000
+ 
+VALIDATION- Overall accuracy :55.7927
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     15.00000      3.00000      5.00000     10.00000      5.00000
+  class2_Trgt      5.00000     45.00000      3.00000      6.00000      4.00000
+  class3_Trgt     11.00000      1.00000     18.00000      4.00000      6.00000
+  class4_Trgt      6.00000      9.00000      4.00000     65.00000     11.00000
+  class5_Trgt      7.00000      8.00000     11.00000     18.00000     51.00000
+ 
+TESTING- Overall accuracy :58.6103
+***************************************************************************
+model_features_80_nu_0.15_gamma_0.01
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    196.00000      4.00000     19.00000      3.00000      4.00000
+  class2_Trgt      4.00000    362.00000      2.00000      2.00000      5.00000
+  class3_Trgt     35.00000      8.00000    185.00000      2.00000      7.00000
+  class4_Trgt      2.00000      2.00000      3.00000    557.00000      3.00000
+  class5_Trgt      8.00000     18.00000     10.00000     19.00000    509.00000
+ 
+TRAINING- Overall accuracy :91.874
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     12.00000      4.00000      7.00000      9.00000      6.00000
+  class2_Trgt      5.00000     42.00000      3.00000      4.00000      8.00000
+  class3_Trgt     10.00000      3.00000     12.00000      9.00000      5.00000
+  class4_Trgt     10.00000     10.00000      2.00000     61.00000     12.00000
+  class5_Trgt     13.00000     12.00000     10.00000     17.00000     42.00000
+ 
+VALIDATION- Overall accuracy :51.5244
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     21.00000      4.00000      3.00000      7.00000      3.00000
+  class2_Trgt      6.00000     42.00000      1.00000      7.00000      7.00000
+  class3_Trgt     15.00000      1.00000     12.00000      2.00000     10.00000
+  class4_Trgt      9.00000     17.00000      3.00000     54.00000     12.00000
+  class5_Trgt     13.00000      5.00000     11.00000     19.00000     47.00000
+ 
+TESTING- Overall accuracy :53.1722
+***************************************************************************
+model_features_80_nu_0.15_gamma_0.02
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    219.00000      4.00000            0      2.00000      1.00000
+  class2_Trgt      2.00000    361.00000      3.00000      5.00000      4.00000
+  class3_Trgt      1.00000      5.00000    227.00000      3.00000      1.00000
+  class4_Trgt      1.00000      2.00000      4.00000    558.00000      2.00000
+  class5_Trgt      1.00000      2.00000      1.00000            0    560.00000
+ 
+TRAINING- Overall accuracy :97.7654
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     15.00000      3.00000      4.00000      8.00000      8.00000
+  class2_Trgt      3.00000     42.00000      2.00000      6.00000      9.00000
+  class3_Trgt     12.00000      2.00000     11.00000      6.00000      8.00000
+  class4_Trgt      7.00000     11.00000      3.00000     62.00000     12.00000
+  class5_Trgt     11.00000      7.00000     10.00000     13.00000     53.00000
+ 
+VALIDATION- Overall accuracy :55.7927
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     17.00000      5.00000      2.00000      9.00000      5.00000
+  class2_Trgt      4.00000     42.00000      1.00000      7.00000      9.00000
+  class3_Trgt     12.00000      1.00000     16.00000      4.00000      7.00000
+  class4_Trgt      7.00000     14.00000      3.00000     58.00000     13.00000
+  class5_Trgt     10.00000      7.00000     11.00000     16.00000     51.00000
+ 
+TESTING- Overall accuracy :55.5891
+***************************************************************************
+model_features_80_nu_0.15_gamma_0.03
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    218.00000      4.00000            0      2.00000      2.00000
+  class2_Trgt      2.00000    362.00000      3.00000      4.00000      4.00000
+  class3_Trgt      1.00000      5.00000    227.00000      3.00000      1.00000
+  class4_Trgt      1.00000      2.00000      4.00000    557.00000      3.00000
+  class5_Trgt            0      3.00000      1.00000            0    560.00000
+ 
+TRAINING- Overall accuracy :97.7146
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     14.00000      4.00000      3.00000      9.00000      8.00000
+  class2_Trgt      3.00000     43.00000      2.00000      5.00000      9.00000
+  class3_Trgt     13.00000      1.00000     10.00000      7.00000      8.00000
+  class4_Trgt      8.00000     10.00000      3.00000     61.00000     13.00000
+  class5_Trgt     12.00000      7.00000     11.00000     13.00000     51.00000
+ 
+VALIDATION- Overall accuracy :54.5732
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     14.00000      6.00000      4.00000      8.00000      6.00000
+  class2_Trgt      4.00000     41.00000      2.00000      7.00000      9.00000
+  class3_Trgt     12.00000      1.00000     16.00000      5.00000      6.00000
+  class4_Trgt      6.00000     13.00000      3.00000     58.00000     15.00000
+  class5_Trgt     10.00000      7.00000     12.00000     15.00000     51.00000
+ 
+TESTING- Overall accuracy :54.3807
+***************************************************************************
+model_features_80_nu_0.25_gamma_0.01
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    176.00000     15.00000     15.00000     11.00000      9.00000
+  class2_Trgt     10.00000    315.00000      9.00000     31.00000     10.00000
+  class3_Trgt      7.00000     28.00000    178.00000     20.00000      4.00000
+  class4_Trgt     11.00000     16.00000     13.00000    515.00000     12.00000
+  class5_Trgt      9.00000     21.00000      3.00000      7.00000    524.00000
+ 
+TRAINING- Overall accuracy :86.7445
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     14.00000      4.00000      6.00000      7.00000      7.00000
+  class2_Trgt      6.00000     44.00000            0      4.00000      8.00000
+  class3_Trgt      8.00000      4.00000     14.00000      5.00000      8.00000
+  class4_Trgt      4.00000      7.00000      4.00000     67.00000     13.00000
+  class5_Trgt     12.00000      7.00000     11.00000     17.00000     47.00000
+ 
+VALIDATION- Overall accuracy :56.7073
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     15.00000      6.00000      3.00000     11.00000      3.00000
+  class2_Trgt      5.00000     46.00000      1.00000      5.00000      6.00000
+  class3_Trgt     11.00000      3.00000     15.00000      4.00000      7.00000
+  class4_Trgt      4.00000     11.00000      3.00000     65.00000     12.00000
+  class5_Trgt      5.00000      9.00000      9.00000     20.00000     52.00000
+ 
+TESTING- Overall accuracy :58.3082
+***************************************************************************
+model_features_80_nu_0.25_gamma_0.02
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    187.00000     14.00000      4.00000     12.00000      9.00000
+  class2_Trgt     10.00000    316.00000      9.00000     30.00000     10.00000
+  class3_Trgt      5.00000     24.00000    181.00000     21.00000      6.00000
+  class4_Trgt     14.00000     14.00000     11.00000    515.00000     13.00000
+  class5_Trgt      8.00000     20.00000      4.00000      7.00000    525.00000
+ 
+TRAINING- Overall accuracy :87.5571
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     12.00000      3.00000      8.00000      8.00000      7.00000
+  class2_Trgt      5.00000     43.00000      1.00000      4.00000      9.00000
+  class3_Trgt     11.00000      3.00000     13.00000      4.00000      8.00000
+  class4_Trgt      4.00000      7.00000      4.00000     66.00000     14.00000
+  class5_Trgt     11.00000      7.00000      9.00000     17.00000     50.00000
+ 
+VALIDATION- Overall accuracy :56.0976
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     14.00000      6.00000      3.00000     11.00000      4.00000
+  class2_Trgt      3.00000     46.00000      1.00000      5.00000      8.00000
+  class3_Trgt      9.00000      4.00000     18.00000      4.00000      5.00000
+  class4_Trgt      5.00000     10.00000      3.00000     64.00000     13.00000
+  class5_Trgt      7.00000      9.00000      6.00000     17.00000     56.00000
+ 
+TESTING- Overall accuracy :59.8187
+***************************************************************************
+model_features_80_nu_0.25_gamma_0.03
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    188.00000     13.00000      4.00000     12.00000      9.00000
+  class2_Trgt     11.00000    317.00000      8.00000     29.00000     10.00000
+  class3_Trgt      5.00000     23.00000    182.00000     20.00000      7.00000
+  class4_Trgt     12.00000     13.00000     11.00000    518.00000     13.00000
+  class5_Trgt     10.00000     20.00000      3.00000      8.00000    523.00000
+ 
+TRAINING- Overall accuracy :87.7603
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     12.00000      3.00000      7.00000      9.00000      7.00000
+  class2_Trgt      4.00000     44.00000      1.00000      4.00000      9.00000
+  class3_Trgt     11.00000      3.00000     13.00000      4.00000      8.00000
+  class4_Trgt      4.00000      7.00000      4.00000     66.00000     14.00000
+  class5_Trgt     11.00000      7.00000      9.00000     17.00000     50.00000
+ 
+VALIDATION- Overall accuracy :56.4024
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     14.00000      6.00000      3.00000     11.00000      4.00000
+  class2_Trgt      2.00000     47.00000      1.00000      5.00000      8.00000
+  class3_Trgt      9.00000      4.00000     18.00000      4.00000      5.00000
+  class4_Trgt      5.00000      9.00000      2.00000     66.00000     13.00000
+  class5_Trgt      6.00000     10.00000      6.00000     17.00000     56.00000
+ 
+TESTING- Overall accuracy :60.7251
+***************************************************************************
+model_features_110_nu_0.15_gamma_0.01
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    207.00000      8.00000      6.00000      2.00000      3.00000
+  class2_Trgt      6.00000    358.00000      3.00000      6.00000      2.00000
+  class3_Trgt     16.00000      6.00000    210.00000      5.00000            0
+  class4_Trgt      4.00000      2.00000      4.00000    554.00000      3.00000
+  class5_Trgt      1.00000      9.00000      2.00000            0    552.00000
+ 
+TRAINING- Overall accuracy :95.5307
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     16.00000      4.00000      3.00000      8.00000      7.00000
+  class2_Trgt      8.00000     40.00000      3.00000      3.00000      8.00000
+  class3_Trgt     11.00000      5.00000     11.00000      5.00000      7.00000
+  class4_Trgt      8.00000      6.00000      6.00000     60.00000     15.00000
+  class5_Trgt     12.00000      5.00000      9.00000     16.00000     52.00000
+ 
+VALIDATION- Overall accuracy :54.5732
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     15.00000      7.00000      7.00000      5.00000      4.00000
+  class2_Trgt      4.00000     43.00000      3.00000      6.00000      7.00000
+  class3_Trgt     11.00000      5.00000     12.00000      3.00000      9.00000
+  class4_Trgt      5.00000     10.00000      3.00000     63.00000     14.00000
+  class5_Trgt      7.00000     10.00000     14.00000     14.00000     50.00000
+ 
+TESTING- Overall accuracy :55.287
+***************************************************************************
+model_features_110_nu_0.15_gamma_0.02
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    213.00000      7.00000      1.00000      1.00000      4.00000
+  class2_Trgt      3.00000    358.00000      4.00000      7.00000      3.00000
+  class3_Trgt      1.00000      6.00000    224.00000      5.00000      1.00000
+  class4_Trgt      3.00000      2.00000      5.00000    555.00000      2.00000
+  class5_Trgt      2.00000      6.00000            0            0    556.00000
+ 
+TRAINING- Overall accuracy :96.8004
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     13.00000      5.00000      4.00000     10.00000      6.00000
+  class2_Trgt      8.00000     39.00000      2.00000      4.00000      9.00000
+  class3_Trgt     11.00000      7.00000      9.00000      4.00000      8.00000
+  class4_Trgt      5.00000      7.00000      6.00000     63.00000     14.00000
+  class5_Trgt     10.00000      8.00000      7.00000     15.00000     54.00000
+ 
+VALIDATION- Overall accuracy :54.2683
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     16.00000      7.00000      5.00000      5.00000      5.00000
+  class2_Trgt      4.00000     43.00000      3.00000      6.00000      7.00000
+  class3_Trgt     13.00000      3.00000     12.00000      2.00000     10.00000
+  class4_Trgt      6.00000     12.00000      3.00000     66.00000      8.00000
+  class5_Trgt      9.00000     12.00000     14.00000     11.00000     49.00000
+ 
+TESTING- Overall accuracy :56.1934
+***************************************************************************
+model_features_110_nu_0.15_gamma_0.03
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    213.00000      7.00000      1.00000      1.00000      4.00000
+  class2_Trgt      3.00000    359.00000      4.00000      7.00000      2.00000
+  class3_Trgt      1.00000      7.00000    223.00000      5.00000      1.00000
+  class4_Trgt      3.00000      1.00000      5.00000    555.00000      3.00000
+  class5_Trgt      2.00000      6.00000            0            0    556.00000
+ 
+TRAINING- Overall accuracy :96.8004
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     14.00000      5.00000      4.00000     11.00000      4.00000
+  class2_Trgt      6.00000     41.00000      2.00000      4.00000      9.00000
+  class3_Trgt     10.00000      6.00000     10.00000      4.00000      9.00000
+  class4_Trgt      4.00000      8.00000      6.00000     62.00000     15.00000
+  class5_Trgt      9.00000      8.00000      8.00000     15.00000     54.00000
+ 
+VALIDATION- Overall accuracy :55.1829
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     18.00000      6.00000      4.00000      5.00000      5.00000
+  class2_Trgt      3.00000     42.00000      3.00000      6.00000      9.00000
+  class3_Trgt     11.00000      2.00000     18.00000      1.00000      8.00000
+  class4_Trgt      6.00000     12.00000      2.00000     65.00000     10.00000
+  class5_Trgt      9.00000     10.00000     14.00000     11.00000     51.00000
+ 
+TESTING- Overall accuracy :58.6103
+***************************************************************************
+model_features_110_nu_0.25_gamma_0.01
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    179.00000     15.00000      4.00000     15.00000     13.00000
+  class2_Trgt     12.00000    312.00000      7.00000     34.00000     10.00000
+  class3_Trgt      5.00000     24.00000    173.00000     27.00000      8.00000
+  class4_Trgt     12.00000     22.00000     16.00000    509.00000      8.00000
+  class5_Trgt     18.00000     19.00000      8.00000      8.00000    511.00000
+ 
+TRAINING- Overall accuracy :85.5256
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     15.00000      4.00000      7.00000      9.00000      3.00000
+  class2_Trgt      9.00000     37.00000      2.00000      5.00000      9.00000
+  class3_Trgt     11.00000      4.00000     10.00000      8.00000      6.00000
+  class4_Trgt      5.00000      5.00000      5.00000     64.00000     16.00000
+  class5_Trgt     11.00000      8.00000      6.00000     15.00000     54.00000
+ 
+VALIDATION- Overall accuracy :54.878
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     16.00000      6.00000      4.00000      8.00000      4.00000
+  class2_Trgt      2.00000     47.00000      1.00000      5.00000      8.00000
+  class3_Trgt      8.00000      2.00000     19.00000      2.00000      9.00000
+  class4_Trgt      7.00000      9.00000      5.00000     63.00000     11.00000
+  class5_Trgt      5.00000     12.00000     12.00000     15.00000     51.00000
+ 
+TESTING- Overall accuracy :59.2145
+***************************************************************************
+model_features_110_nu_0.25_gamma_0.02
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    179.00000     14.00000      4.00000     15.00000     14.00000
+  class2_Trgt     14.00000    316.00000      7.00000     29.00000      9.00000
+  class3_Trgt      2.00000     26.00000    176.00000     24.00000      9.00000
+  class4_Trgt     13.00000     17.00000     14.00000    513.00000     10.00000
+  class5_Trgt     18.00000     18.00000      7.00000      9.00000    512.00000
+ 
+TRAINING- Overall accuracy :86.1351
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     17.00000      4.00000      4.00000      9.00000      4.00000
+  class2_Trgt      8.00000     37.00000      3.00000      5.00000      9.00000
+  class3_Trgt     11.00000      3.00000     12.00000      7.00000      6.00000
+  class4_Trgt      3.00000      6.00000      5.00000     66.00000     15.00000
+  class5_Trgt      9.00000      8.00000      6.00000     16.00000     55.00000
+ 
+VALIDATION- Overall accuracy :57.0122
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     14.00000      4.00000      7.00000      8.00000      5.00000
+  class2_Trgt      1.00000     46.00000      2.00000      5.00000      9.00000
+  class3_Trgt      9.00000      1.00000     17.00000      3.00000     10.00000
+  class4_Trgt      8.00000      9.00000      5.00000     64.00000      9.00000
+  class5_Trgt      5.00000     11.00000     11.00000     15.00000     53.00000
+ 
+TESTING- Overall accuracy :58.6103
+***************************************************************************
+model_features_110_nu_0.25_gamma_0.03
+***TRAINING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt    183.00000     12.00000      4.00000     13.00000     14.00000
+  class2_Trgt     10.00000    318.00000      7.00000     31.00000      9.00000
+  class3_Trgt      3.00000     25.00000    179.00000     22.00000      8.00000
+  class4_Trgt     13.00000     15.00000     14.00000    516.00000      9.00000
+  class5_Trgt     18.00000     18.00000      7.00000      9.00000    512.00000
+ 
+TRAINING- Overall accuracy :86.7445
+-------------------------------------------------------------------------
+***VALIDATION ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     18.00000      4.00000      3.00000      9.00000      4.00000
+  class2_Trgt      7.00000     38.00000      3.00000      5.00000      9.00000
+  class3_Trgt     11.00000      3.00000     12.00000      7.00000      6.00000
+  class4_Trgt      3.00000      6.00000      5.00000     67.00000     14.00000
+  class5_Trgt      9.00000      7.00000      7.00000     16.00000     55.00000
+ 
+VALIDATION- Overall accuracy :57.9268
+-------------------------------------------------------------------------
+***TESTING ***
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred  class3_Pred  class4_Pred  class5_Pred
+  class1_Trgt     15.00000      4.00000      6.00000      8.00000      5.00000
+  class2_Trgt      1.00000     46.00000      2.00000      5.00000      9.00000
+  class3_Trgt      9.00000      1.00000     18.00000      3.00000      9.00000
+  class4_Trgt      8.00000      9.00000      4.00000     65.00000      9.00000
+  class5_Trgt      4.00000     10.00000     10.00000     15.00000     56.00000
+ 
+TESTING- Overall accuracy :60.423

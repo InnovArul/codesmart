@@ -1,0 +1,19 @@
+1 cow
+2 boat
+3 sheep
+4 bottle 
+5 bird
+
+cow: 302
+boat: 500
+sheep: 316
+bottle: 757
+bird: 753
+
+cow: train = 211, val = 45, test = 46
+boat: train = 350, val = 75, test = 75
+sheep: train = 221, val = 47, test = 48
+bottle: train = 529, val = 114, test = 114
+bird: train = 527, val = 113, test = 113
+
+completed!
