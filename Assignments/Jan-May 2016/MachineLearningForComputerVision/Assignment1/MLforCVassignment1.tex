@@ -1,0 +1,219 @@
+\documentclass[fleqn]{article}
+\usepackage{graphicx}
+\usepackage[space]{grffile}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage[fleqn]{amsmath}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{hyperref}
+\newgeometry{left=3cm, top=2cm, bottom=2cm}
+\graphicspath{ {/media/arul/envision/jan-may-2016/MLforCV/Assignment1/report/}, {/media/arul/envision/jan-may-2016/MLforCV/Assignment1/report/pics} }
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+
+%Path in Unix-like (Linux, OsX) format
+\begin{document} 
+\setcounter{secnumdepth}{5}
+	\title{EE6130 Machine Learning for Computer Vision \\ Assignment-1 (ML, MAP, Bayesian, Face classification using PCA)}
+	\author{ Arulkumar S (CS15S023)}
+	\maketitle
+
+\section{Problem-1: ML, MAP, Bayesian}
+
+\subsection{Maximum Likelihood Estimation of $\mu$ for Normal Distribution}
+ 
+Maximum likelihood estimation of Mean $\mu$ = $\argmax_{\mu}{P(X|\mu)}$ \\\\
+taking $ln$ on both sides, we get,\\\\
+L($\mu$) = $\sum_{i=0}^{N}ln(P(x_i|\mu))$, where N is the total number of examples given.\\\\
+considering the likelihood ($P(x_i|\mu)$) as a Normal distribution $Norm_x(\mu, \epsilon) = {{1}\over{\sqrt{2\pi}|\epsilon|}} e^{-0.5(x-\mu)^{t}\epsilon^{-1}(x-\mu)}$ \\\\
+we get, L($\mu$) = $\sum_{i=1}^{N}(-0.5ln(2\pi)-ln(|\epsilon|)-0.5(x_i-\mu)^{t}\epsilon^{-1}(x_i-\mu))$\\\\
+Differentiating L($\mu$) w.r.t., $\mu$ and equating it to 0, we get $\frac{\partial L(\mu)}{\partial \mu}$ = $\sum_{i=1}^{N}(x_i - \mu) = 0$\\\\ $\Longrightarrow \mu_{ML} = \frac{\sum_{i=0}^{N}x_i}{N}$ \\\\ 
+
+\subsection{Maximum Aposteriori Estimation of $\mu$ for Normal Distribution}
+
+We can write the posterior distribution $P(\mu|X) = \frac{P(X|\mu)P(\mu)}{P(x)}$\\\\
+then, Maximum aposteriori estimation of $\mu$ will be given as, $\mu_{MAP} = \argmax_{\mu} \frac{P(X|\mu)P(\mu)}{P(x)}$\\\\
+Assume that the prior is of mean ($P(\mu)$) to be a normal distribution $Norm_\mu(\mu_p, \epsilon_p) = {{1}\over{\sqrt{2\pi}|\epsilon_p|}} e^{-0.5(\mu_p-\mu)^{t}\epsilon_p^{-1}(\mu_p-\mu)}$ and likelihood is given as a normal distribution $Norm_x(\mu, \epsilon) = {{1}\over{\sqrt{2\pi}|\epsilon|}} e^{-0.5(x-\mu)^{t}\epsilon^{-1}(x-\mu)}$\\\\
+Now, $\mu_{MAP} = \argmax_{\mu} \frac{Norm_x(\mu, \epsilon) * Norm_\mu(\mu_p, \epsilon_p)}{P(x)}$\\\\
+We can eliminate the denominator P(x), as it does not depend on $\mu$.\\\\
+Taking log on both sides, we can write L($\mu$) =  ${Norm_x(\mu, \epsilon) * Norm_\mu(\mu_p, \epsilon_p)}$ = $\sum_{i=1}^{N}{ln(Norm_{x_i}(\mu, \epsilon)) + ln(Norm_\mu(\mu_p, \epsilon_p))}$\\\\
+Differentiating L($\mu$) w.r.t., $\mu$ and equating it to 0, we get $\frac{\partial L(\mu)}{\partial \mu}$ = $\sum_{i=0}^{N}(\epsilon^{-1}(x_i - \mu)) + (\epsilon_p(\mu - \mu_p)) = 0$\\\\
+$\Longrightarrow \mu_{MAP} = \frac{\epsilon^{-1}\mu_{ML} + \frac{\epsilon_p^{-1}}{N}\mu_p}{\epsilon^{-1} + \frac{\epsilon_p^{-1}}{N}}$ 
+
+\subsection{Bayesian Estimation of $\mu$ \& Predictive density for Normal Distribution}
+\subsubsection{Posterior distribution $P(\mu|X)$}
+The distribution of mean P($\mu|X$) = $\frac{P(X, \mu)}{P(X)} = \frac{P(X|\mu)*P(\mu)}{P(X)} = \frac{\prod_{i=1}^{N} P(x_i|\mu)*P(\mu)}{P(X)} $\\\\
+Here the likelihood is given by $Norm_x(\mu, \epsilon)$ and the prior will be given by $Norm_\mu(\mu_p, \epsilon_p)$. \\\
+Since, we know that the result of the product of two normal distributions is a \textbf{Normal distribution}. \\\\
+To find the resulting normal distribution, concentrate on Quadratic terms.\\\\ 
+
+we can write the quadratic terms as, $-0.5\sum_{i=1}^N(x-\mu)^t\epsilon^{-1}(x-\mu) -0.5(\mu-\mu_p)^t\epsilon_p^{-1}(\mu-\mu_p)$\\\\
+ $\longrightarrow -0.5\sum_{i=1}^N(x^t\epsilon^{-1}x-2\mu^t\epsilon^{-1}x+\mu^t\epsilon^{-1}\mu) - 0.5(\mu^t\epsilon^{-1}\mu_p-2\mu^t\epsilon^{-1}\mu_p+\mu_p^t\epsilon^{-1}\mu_p)$\\\\
+ $\longrightarrow -0.5(\sum_{i=1}^N\mu^t\epsilon^{-1}\mu) + \mu^t\epsilon_p^{-1}\mu + 2\mu^t(\epsilon^{-1}\sum_{i=1}^Nx_i + \epsilon_p^{-1}\mu_p) + constant)$\\\\
+ $\longrightarrow -0.5(\mu^t(N\epsilon^{-1} + \epsilon_p^{-1})\mu + 2\mu^t(\epsilon^{-1}\sum_{i=1}^Nx_i + \epsilon_p^{-1}\mu_p) + constant)$\\\\
+ from the above quadratic equation, we can write the result as a Normal distribution with mean \\\\ ($(N\epsilon^{-1} + \epsilon_p^{-1})^{-1}{(\epsilon^{-1}\sum_{i=1}^Nx_i + \epsilon_p^{-1}\mu_p)}$) and variance $(\epsilon^{-1} + \epsilon_p^{-1})^{-1}$\\\\
+ 
+hence, P($\mu|X$) = $\frac{\kappa Norm_\mu((N\epsilon^{-1} + \epsilon_p^{-1})^{-1}{(\epsilon^{-1}\sum_{i=1}^Nx_i + \epsilon_p^{-1}\mu_p)}), (N\epsilon^{-1} + \epsilon_p^{-1})^{-1}}{P(X)}$\\\\
+since, P($\mu|X$) is a proper proability distribution, the constants $\kappa$ and P(X) will be equal to each other and get cancelled.\\\\
+$\therefore P(\mu|X) = Norm_\mu((N\epsilon^{-1} + \epsilon_p^{-1})^{-1}{(\epsilon^{-1}\sum_{i=1}^Nx_i + \epsilon_p^{-1}\mu_p)}), (N\epsilon^{-1} + \epsilon_p^{-1})^{-1})$ \\\\
+here, $\mu_B = (N\epsilon^{-1} + \epsilon_p^{-1})^{-1}{(\epsilon^{-1}\sum_{i=1}^Nx_i + \epsilon_p^{-1}\mu_p)}$ is same as $\mu_{MAP}$\\\\
+$\epsilon_n = (N\epsilon^{-1} + \epsilon_p^{-1})^{-1}$.\\\\
+
+\subsubsection{Predictive distribution $P(x|X)$}
+
+To find the \textbf{predictive density} P($x|X$) = $\int P(x|\mu)P(\mu|X)d\mu = \int Norm_x(\mu, \epsilon)Norm_\mu(\mu_B, \epsilon_n)d\mu$\\\\
+P($x|X$) = $ \int Norm_{\mu}(x, \epsilon)Norm_\mu(\mu_B, \epsilon_n)d\mu$  \\\\
+by using product of two normal distributions,\\\\ $Norm_x[a, A]Norm_x[b, B] = \kappa.Norm_x[(A^{-1}+B^{-1})^{-1}(A^{-1}a+B^{-1}b), (A^{-1}+B^{-1})^{-1}]$\\\\
+where the constant $\kappa$ is given by $\kappa=Norm_a[b, A+B]==Norm_b[a, A+B]$\\\\
+$\therefore P(x|X) = \int Norm_x[\mu_B, \epsilon+\epsilon_n].Norm_\mu[(\epsilon^{-1}+\epsilon_n^{-1})^{-1}(\epsilon^{-1}x+\epsilon_n^{-1}\mu_B), (\epsilon^{-1}+\epsilon_n^{-1})^{-1}] d\mu $ \\\\
+$\longrightarrow  P(x|X) = Norm_x[\mu_B, \epsilon+\epsilon_n]$\\
+$\Longrightarrow here, \mu_{B} = \frac{\epsilon^{-1}\mu_{ML} + \frac{\epsilon_p^{-1}}{N}\mu_p}{\epsilon^{-1} + \frac{\epsilon_p^{-1}}{N}}$ \& $\epsilon_B = \epsilon + \epsilon_n$
+
+\subsection{Plots of d vs. n}
+\subsubsection{Plot-1: ML and MAP for prior-1}
+\includegraphics[scale=0.5]{./pics/ML-MAP with Prior1.png} \newline
+\myparagraph{Inference}
+In the plot, the inital ML estimate (with 2 examples) is having more deviation from Ground truth,\\
+where as initial MAP estimate has less deviation from Ground truth due to well-choosen prior on $\mu$. \\
+\subsubsection{Plot-2: MAP and Bayesian for prior-1}
+\includegraphics[scale=0.5]{./pics/MAP with Prior1-Bayesian with Prior1.png} \newline
+\myparagraph{Inference}
+In the plot, the Bayesian Estimate is almost coinciding with MAP estimates with Prior-1. Hence, we can choose MAP estimate in this case.\\
+\subsubsection{Plot-3: ML and MAP for prior-2}
+\includegraphics[scale=0.5]{./pics/ML-MAP with Prior2.png} \newline
+\myparagraph{Inference}
+In the plot, Eventhough the inital ML estimate (with 2 examples) is having more deviation from Ground truth than the initial MAP estimate,\\
+when we include more data for estimation of $\mu$, the ML estimate of $\mu$ turned out to have less difference from Ground truth. \\
+\subsubsection{Plot-4: MAP and Bayesian for prior-2}
+\includegraphics[scale=0.5]{./pics/MAP with Prior2-Bayesian with Prior2.png} \newline
+\myparagraph{Inference}
+In the plot, the Bayesian Estimate is almost coinciding with MAP estimates with Prior-1. Hence, we can choose MAP estimate in this case.\\
+
+\subsubsection{Questions}
+\textbf{1) ML vs. MAP from d vs. n plots:}\\
+\begin{itemize}
+  \item when the number of data examples is less, it will be better to use MAP estimate,\\
+   given that we have a well-choosen prior for the distribution.
+   \item for example, in Plot 1, it is shown that the given Prior is fitting the data (and matching with ground truth) very well.
+   \item In plot 3, the prior choosen was not appropriate. hence, the ML estimate can be choosen in this case.
+\end{itemize}
+\textbf{2) MAP vs. Bayesian from d vs. n plots:}\\
+\begin{itemize}
+  \item when the number of data examples is less (\~2 examples), since the Bayesian estimation calculates \\
+  the distribution over $\mu$, the bayesian estimate seems to be better at Plot-2. 
+  \item when the number of data examples is increased, the Bayesian estimation coincides with MAP estimation. \\ 
+  We shall choose MAP estimate when the data is available more due to computation complexity of Bayesian estimation.
+\end{itemize}
+
+\newpage
+\section{Problem-2: Face classification using PCA}
+\subsection{Statistics of Principle components and various models}
+While including the eigen vectors one by one and reconstructing the images, the Total Error (frobenius norm = $error = \sqrt(\sum_{i=1}^N (X_{orig}^2-X_{reconstruct}^2))$) is decreasing, \\
+since More and more eigen vectors will be able to fully reconstruct the images without any loss. \\
+\begin{figure}[h!]
+\caption{Error (frobenius norm) during reconstruction using Eigen vectors}
+\includegraphics[scale=0.3]{./pics/frobeniusNorm.png} \newline
+\end{figure}
+
+\subsubsection{Eigen faces}
+here are some of the eigen faces found during PCA.\\
+\includegraphics[scale=0.2]{./pics/eigenfaceset1.png} 
+\includegraphics[scale=0.2]{./pics/eigenfaceset2.png} \newline
+
+\subsection{Classification trend}
+\includegraphics[scale=0.3]{./pics/accuracies.jpg} \newline
+\myparagraph{inference}
+In the above picture, \textbf{the accuracy percentages} during the classification with different number of componenets vs. varying training splits are plotted (more darker the cell is, better the classification).\\
+\begin{itemize}
+  \item It can be seen that when the number of principle components is low, we get greater accuracy (20 components, 97.2\% in 300:300 split), 
+  \item But when the number of principle components is increased, more number of examples are needed to train the models for higher accuracy.\\
+\end{itemize}
+
+\subsection{with 140 principle components}
+Below are the training accuracies for features with 140 components.
+\begin{center}
+  \begin{longtable}{ c | c | c  }
+  	\multicolumn{1}{c}{ Number of Faces } & 
+	\multicolumn{1}{c}{ Number of Non-faces } & 
+	\multicolumn{1}{c}{ classification accuracy(\%)} \\
+    \hline
+ 	150 & 150 & 74.75\\ \hline
+ 	150 & 200 & 53.7 \\ \hline
+ 	200 & 200 & 84.7\\ \hline
+ 	250 & 200 & 93.3\\ \hline
+ 	300 & 200 & 96.2\\ \hline
+ 	300 & 300 & 91.95\\ \hline
+ 	400 & 300 & 95.19\\ \hline
+ 	400 & 400 & 94.41\\ \hline
+ 	600 & 400 & 95.53\\ \hline
+  \end{longtable}
+\end{center}
+
+\subsubsection{Accuracy plot for model with 140 principle components}
+\includegraphics[scale=0.6]{./pics/1Accuracies.png} \newline
+
+\subsubsection{Confusion matrices for different Training partitions}
+\myparagraph{140 componenets - 250:200 ratio}
+
+\begin{center}
+  \begin{longtable}{ c | c | c  }
+  	\multicolumn{1}{c}{ } & 
+	\multicolumn{1}{c}{Face - Predicted } & 
+	\multicolumn{1}{c}{Non Face - Predicted } \\
+    \hline
+ 	Face - Target & 444& 56\\ \hline
+ 	Non Face - Target & 4&391 \\ 	\hline
+ 	& Accuracy & 93.29\% \\ \hline
+  \end{longtable}
+\end{center}
+
+\myparagraph{140 componenets - 300:300 ratio}
+
+\begin{center}
+  \begin{longtable}{ c | c | c  }
+  	\multicolumn{1}{c}{ } & 
+	\multicolumn{1}{c}{Face - Predicted } & 
+	\multicolumn{1}{c}{Non Face - Predicted } \\
+    \hline
+ 	Face - Target & 472& 28\\ \hline
+ 	Non Face - Target & 6 &389 \\ 	\hline
+ 	& Accuracy & 96.2\% \\ \hline
+  \end{longtable}
+\end{center}
+
+\newpage
+\subsection{Plots for Best Model}
+
+According to the Accuracy table plot, \textbf{the best model is with 20 eigen vectors and training data ratio of 300:300 (face data : non-face data)}.\\
+\myparagraph{Confusion matrix for best model}
+\begin{center}
+  \begin{longtable}{ c | c | c  }
+  	\multicolumn{1}{c}{ } & 
+	\multicolumn{1}{c}{Face - Predicted } & 
+	\multicolumn{1}{c}{Non Face - Predicted } \\
+    \hline
+ 	Face - Target & 487& 13\\ \hline
+ 	Non Face - Target & 12 &383 \\ 	\hline
+ 	& Accuracy & 97.21\% \\ \hline
+  \end{longtable}
+\end{center}
+\myparagraph{ROC plot for best model}
+
+In the ROC curve, we can see that the Face class model is performing much better than\\ the Non-face class model,
+as the True positive Rate of Face model reaches 1 (100\%) faster than True positive rate of Non-face model.\\
+\includegraphics[scale=0.6]{./pics/principle20_300:300_ROC.png} \newline
+\myparagraph{Best model(20 components) : Log likelihood visualization of Face model}
+
+The optimal log-likelihood threshold for FPR\textless=0.2 is -80.73.\\
+\includegraphics[scale=0.6]{./pics/class1llvisualization.png} \newline
+\myparagraph{Best model(20 components) : Log likelihood visualization of Non-Face model}
+
+The optimal log-likelihood threshold for FPR\textless=0.2 is -41.40.\\
+\includegraphics[scale=0.6]{./pics/class2llvisualization.png} \newline
+in face model, the threshold for FPR<= 0.2 is -80.73\\
+in non-face model, the threshold for FPR<= 0.2 is -41.40.\\\\
+According to the ROC plot, Log-likelihood visualization plots, the best model is choosen as the \textbf{``Face model with 20 components (300:300 training data)'' with the threshold for FPR\textless= 0.2 as -80.77}.
+
+\end{document}

@@ -1,0 +1,14 @@
+best test : 
+	
+{
+  1 : "filt=5-hidden1=5-hidden2=15-hidden3=15-fc1=150-fc2=150"
+  2 : "filt=5-hidden1=5-hidden2=15-hidden3=5-fc1=300-fc2=150"
+}
+accuracy : 0.53048780487805
+	
+epoch : 
+	
+{
+  1 : 183
+  2 : 167
+}

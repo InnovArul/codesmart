@@ -1,0 +1,460 @@
+>> doall_task2(options.DATASET4)
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.001 -n 0.05
+*
+optimization finished, #iter = 26
+obj = 113.573073, rho = 14.574223
+nSV = 17, nBSV = 13
+Accuracy = 94.5455% (156/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    116.00000      4.00000
+  class2_Trgt      5.00000     40.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      0.96667      0.88889
+  Specificity      0.88889      0.96667
+    Precision      0.95868      0.90909
+     F1_Score      0.96266      0.89888
+ 
+validation Data- Overall accuracy :94.5455
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.001 -n 0.1
+*
+optimization finished, #iter = 30
+obj = 469.424531, rho = 30.003201
+nSV = 32, nBSV = 32
+Accuracy = 93.3333% (154/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    117.00000      3.00000
+  class2_Trgt      8.00000     37.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      0.97500      0.82222
+  Specificity      0.82222      0.97500
+    Precision      0.93600      0.92500
+     F1_Score      0.95510      0.87059
+ 
+validation Data- Overall accuracy :93.3333
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.001 -n 0.15
+*
+optimization finished, #iter = 44
+obj = 1075.186285, rho = 45.731205
+nSV = 48, nBSV = 48
+Accuracy = 93.3333% (154/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    120.00000            0
+  class2_Trgt     11.00000     34.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      1.00000      0.75556
+  Specificity      0.75556      1.00000
+    Precision      0.91603      1.00000
+     F1_Score      0.95618      0.86076
+ 
+validation Data- Overall accuracy :93.3333
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.001 -n 0.2
+*
+optimization finished, #iter = 61
+obj = 1932.798944, rho = 61.479789
+nSV = 65, nBSV = 61
+Accuracy = 92.1212% (152/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    120.00000            0
+  class2_Trgt     13.00000     32.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      1.00000      0.71111
+  Specificity      0.71111      1.00000
+    Precision      0.90226      1.00000
+     F1_Score      0.94862      0.83117
+ 
+validation Data- Overall accuracy :92.1212
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.001 -n 0.25
+*
+optimization finished, #iter = 68
+obj = 3043.066874, rho = 77.299539
+nSV = 81, nBSV = 79
+Accuracy = 90.303% (149/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    120.00000            0
+  class2_Trgt     16.00000     29.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      1.00000      0.64444
+  Specificity      0.64444      1.00000
+    Precision      0.88235      1.00000
+     F1_Score      0.93750      0.78378
+ 
+validation Data- Overall accuracy :90.303
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.006 -n 0.05
+*
+optimization finished, #iter = 31
+obj = 66.708617, rho = 9.497005
+nSV = 19, nBSV = 13
+Accuracy = 94.5455% (156/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    116.00000      4.00000
+  class2_Trgt      5.00000     40.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      0.96667      0.88889
+  Specificity      0.88889      0.96667
+    Precision      0.95868      0.90909
+     F1_Score      0.96266      0.89888
+ 
+validation Data- Overall accuracy :94.5455
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.006 -n 0.1
+*
+optimization finished, #iter = 38
+obj = 318.570528, rho = 22.483914
+nSV = 34, nBSV = 31
+Accuracy = 93.3333% (154/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    117.00000      3.00000
+  class2_Trgt      8.00000     37.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      0.97500      0.82222
+  Specificity      0.82222      0.97500
+    Precision      0.93600      0.92500
+     F1_Score      0.95510      0.87059
+ 
+validation Data- Overall accuracy :93.3333
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.006 -n 0.15
+*
+optimization finished, #iter = 43
+obj = 791.591477, rho = 36.752599
+nSV = 48, nBSV = 48
+Accuracy = 93.3333% (154/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    120.00000            0
+  class2_Trgt     11.00000     34.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      1.00000      0.75556
+  Specificity      0.75556      1.00000
+    Precision      0.91603      1.00000
+     F1_Score      0.95618      0.86076
+ 
+validation Data- Overall accuracy :93.3333
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.006 -n 0.2
+*
+optimization finished, #iter = 65
+obj = 1497.046850, rho = 51.432516
+nSV = 66, nBSV = 61
+Accuracy = 92.1212% (152/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    120.00000            0
+  class2_Trgt     13.00000     32.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      1.00000      0.71111
+  Specificity      0.71111      1.00000
+    Precision      0.90226      1.00000
+     F1_Score      0.94862      0.83117
+ 
+validation Data- Overall accuracy :92.1212
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.006 -n 0.25
+*
+optimization finished, #iter = 65
+obj = 2437.882858, rho = 66.241055
+nSV = 81, nBSV = 79
+Accuracy = 90.303% (149/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    120.00000            0
+  class2_Trgt     16.00000     29.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      1.00000      0.64444
+  Specificity      0.64444      1.00000
+    Precision      0.88235      1.00000
+     F1_Score      0.93750      0.78378
+ 
+validation Data- Overall accuracy :90.303
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.011 -n 0.05
+*
+optimization finished, #iter = 31
+obj = 43.048745, rho = 6.550211
+nSV = 19, nBSV = 12
+Accuracy = 94.5455% (156/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    116.00000      4.00000
+  class2_Trgt      5.00000     40.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      0.96667      0.88889
+  Specificity      0.88889      0.96667
+    Precision      0.95868      0.90909
+     F1_Score      0.96266      0.89888
+ 
+validation Data- Overall accuracy :94.5455
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.011 -n 0.1
+*
+optimization finished, #iter = 44
+obj = 229.936884, rho = 17.570425
+nSV = 36, nBSV = 30
+Accuracy = 93.3333% (154/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    118.00000      2.00000
+  class2_Trgt      9.00000     36.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      0.98333      0.80000
+  Specificity      0.80000      0.98333
+    Precision      0.92913      0.94737
+     F1_Score      0.95547      0.86747
+ 
+validation Data- Overall accuracy :93.3333
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.011 -n 0.15
+*
+optimization finished, #iter = 50
+obj = 612.538714, rho = 30.575500
+nSV = 50, nBSV = 47
+Accuracy = 92.7273% (153/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    120.00000            0
+  class2_Trgt     12.00000     33.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      1.00000      0.73333
+  Specificity      0.73333      1.00000
+    Precision      0.90909      1.00000
+     F1_Score      0.95238      0.84615
+ 
+validation Data- Overall accuracy :92.7273
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.011 -n 0.2
+*
+optimization finished, #iter = 82
+obj = 1209.636880, rho = 44.121791
+nSV = 68, nBSV = 61
+Accuracy = 90.9091% (150/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    120.00000            0
+  class2_Trgt     15.00000     30.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      1.00000      0.66667
+  Specificity      0.66667      1.00000
+    Precision      0.88889      1.00000
+     F1_Score      0.94118      0.80000
+ 
+validation Data- Overall accuracy :90.9091
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.011 -n 0.25
+*
+optimization finished, #iter = 64
+obj = 2025.131864, rho = 57.877070
+nSV = 81, nBSV = 79
+Accuracy = 90.9091% (150/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    120.00000            0
+  class2_Trgt     15.00000     30.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      1.00000      0.66667
+  Specificity      0.66667      1.00000
+    Precision      0.88889      1.00000
+     F1_Score      0.94118      0.80000
+ 
+validation Data- Overall accuracy :90.9091
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.016 -n 0.05
+*
+optimization finished, #iter = 36
+obj = 30.112338, rho = 4.708203
+nSV = 19, nBSV = 12
+Accuracy = 94.5455% (156/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    117.00000      3.00000
+  class2_Trgt      6.00000     39.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      0.97500      0.86667
+  Specificity      0.86667      0.97500
+    Precision      0.95122      0.92857
+     F1_Score      0.96296      0.89655
+ 
+validation Data- Overall accuracy :94.5455
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.016 -n 0.1
+*
+optimization finished, #iter = 41
+obj = 174.001298, rho = 14.058520
+nSV = 35, nBSV = 30
+Accuracy = 93.9394% (155/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    119.00000      1.00000
+  class2_Trgt      9.00000     36.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      0.99167      0.80000
+  Specificity      0.80000      0.99167
+    Precision      0.92969      0.97297
+     F1_Score      0.95968      0.87805
+ 
+validation Data- Overall accuracy :93.9394
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.016 -n 0.15
+*
+optimization finished, #iter = 50
+obj = 491.036492, rho = 25.991035
+nSV = 50, nBSV = 47
+Accuracy = 92.7273% (153/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    120.00000            0
+  class2_Trgt     12.00000     33.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      1.00000      0.73333
+  Specificity      0.73333      1.00000
+    Precision      0.90909      1.00000
+     F1_Score      0.95238      0.84615
+ 
+validation Data- Overall accuracy :92.7273
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.016 -n 0.2
+*
+optimization finished, #iter = 74
+obj = 1006.121686, rho = 38.409888
+nSV = 67, nBSV = 62
+Accuracy = 91.5152% (151/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    120.00000            0
+  class2_Trgt     14.00000     31.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      1.00000      0.68889
+  Specificity      0.68889      1.00000
+    Precision      0.89552      1.00000
+     F1_Score      0.94488      0.81579
+ 
+validation Data- Overall accuracy :91.5152
+-s 2 -t 2 -h 0 -e 0.00001 -g 0.016 -n 0.25
+*
+optimization finished, #iter = 76
+obj = 1723.508839, rho = 51.237767
+nSV = 82, nBSV = 77
+Accuracy = 90.303% (149/165) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    120.00000            0
+  class2_Trgt     16.00000     29.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      1.00000      0.64444
+  Specificity      0.64444      1.00000
+    Precision      0.88235      1.00000
+     F1_Score      0.93750      0.78378
+ 
+validation Data- Overall accuracy :90.303
+    [94.5455]    [1.0000e-03]    [1x1 struct]    [0.0500]
+
+Accuracy = 96.729% (207/214) (classification)
+ 
+ 
+Confusion matrix (Trgt = Target, pred = Predicted) = 
+               class1_Pred  class2_Pred
+  class1_Trgt    118.00000      3.00000
+  class2_Trgt      4.00000     89.00000
+ 
+ 
+performance measures = 
+                    class1       class2
+  Sensitivity      0.97521      0.95699
+  Specificity      0.95699      0.97521
+    Precision      0.96721      0.96739
+     F1_Score      0.97119      0.96216
+ 
+test data- Overall accuracy :96.729

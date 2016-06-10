@@ -1,0 +1,349 @@
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.001 -n 0.05
+DEBUG:   calcStats                     	[218 232;6 144]
+DEBUG:   calcStats                     	Overall accuracy :60.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.001 -n 0.1
+DEBUG:   calcStats                     	[292 158;11 139]
+DEBUG:   calcStats                     	Overall accuracy :71.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.001 -n 0.15
+DEBUG:   calcStats                     	[344 106;16 134]
+DEBUG:   calcStats                     	Overall accuracy :79.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.001 -n 0.2
+DEBUG:   calcStats                     	[373 77;27 123]
+DEBUG:   calcStats                     	Overall accuracy :82.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.001 -n 0.25
+DEBUG:   calcStats                     	[390 60;30 120]
+DEBUG:   calcStats                     	Overall accuracy :85
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.051 -n 0.05
+DEBUG:   calcStats                     	[352 98;13 137]
+DEBUG:   calcStats                     	Overall accuracy :81.5
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.051 -n 0.1
+DEBUG:   calcStats                     	[374 76;22 128]
+DEBUG:   calcStats                     	Overall accuracy :83.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.051 -n 0.15
+DEBUG:   calcStats                     	[397 53;23 127]
+DEBUG:   calcStats                     	Overall accuracy :87.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.051 -n 0.2
+DEBUG:   calcStats                     	[414 36;28 122]
+DEBUG:   calcStats                     	Overall accuracy :89.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.051 -n 0.25
+DEBUG:   calcStats                     	[427 23;35 115]
+DEBUG:   calcStats                     	Overall accuracy :90.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.101 -n 0.05
+DEBUG:   calcStats                     	[349 101;13 137]
+DEBUG:   calcStats                     	Overall accuracy :81
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.101 -n 0.1
+DEBUG:   calcStats                     	[370 80;19 131]
+DEBUG:   calcStats                     	Overall accuracy :83.5
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.101 -n 0.15
+DEBUG:   calcStats                     	[396 54;30 120]
+DEBUG:   calcStats                     	Overall accuracy :86
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.101 -n 0.2
+DEBUG:   calcStats                     	[409 41;31 119]
+DEBUG:   calcStats                     	Overall accuracy :88
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.101 -n 0.25
+DEBUG:   calcStats                     	[422 28;37 113]
+DEBUG:   calcStats                     	Overall accuracy :89.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.151 -n 0.05
+DEBUG:   calcStats                     	[351 99;14 136]
+DEBUG:   calcStats                     	Overall accuracy :81.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.151 -n 0.1
+DEBUG:   calcStats                     	[371 79;26 124]
+DEBUG:   calcStats                     	Overall accuracy :82.5
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.151 -n 0.15
+DEBUG:   calcStats                     	[395 55;31 119]
+DEBUG:   calcStats                     	Overall accuracy :85.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.151 -n 0.2
+DEBUG:   calcStats                     	[405 45;34 116]
+DEBUG:   calcStats                     	Overall accuracy :86.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.151 -n 0.25
+DEBUG:   calcStats                     	[418 32;41 109]
+DEBUG:   calcStats                     	Overall accuracy :87.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.201 -n 0.05
+DEBUG:   calcStats                     	[341 109;16 134]
+DEBUG:   calcStats                     	Overall accuracy :79.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.201 -n 0.1
+DEBUG:   calcStats                     	[369 81;26 124]
+DEBUG:   calcStats                     	Overall accuracy :82.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.201 -n 0.15
+DEBUG:   calcStats                     	[388 62;36 114]
+DEBUG:   calcStats                     	Overall accuracy :83.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.201 -n 0.2
+DEBUG:   calcStats                     	[406 44;38 112]
+DEBUG:   calcStats                     	Overall accuracy :86.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.201 -n 0.25
+DEBUG:   calcStats                     	[414 36;41 109]
+DEBUG:   calcStats                     	Overall accuracy :87.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.251 -n 0.05
+DEBUG:   calcStats                     	[345 105;15 135]
+DEBUG:   calcStats                     	Overall accuracy :80
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.251 -n 0.1
+DEBUG:   calcStats                     	[370 80;28 122]
+DEBUG:   calcStats                     	Overall accuracy :82
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.251 -n 0.15
+DEBUG:   calcStats                     	[389 61;36 114]
+DEBUG:   calcStats                     	Overall accuracy :83.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.251 -n 0.2
+DEBUG:   calcStats                     	[400 50;38 112]
+DEBUG:   calcStats                     	Overall accuracy :85.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.251 -n 0.25
+DEBUG:   calcStats                     	[414 36;47 103]
+DEBUG:   calcStats                     	Overall accuracy :86.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.301 -n 0.05
+DEBUG:   calcStats                     	[351 99;20 130]
+DEBUG:   calcStats                     	Overall accuracy :80.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.301 -n 0.1
+DEBUG:   calcStats                     	[372 78;26 124]
+DEBUG:   calcStats                     	Overall accuracy :82.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.301 -n 0.15
+DEBUG:   calcStats                     	[389 61;40 110]
+DEBUG:   calcStats                     	Overall accuracy :83.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.301 -n 0.2
+DEBUG:   calcStats                     	[400 50;38 112]
+DEBUG:   calcStats                     	Overall accuracy :85.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.301 -n 0.25
+DEBUG:   calcStats                     	[413 37;41 109]
+DEBUG:   calcStats                     	Overall accuracy :87
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.351 -n 0.05
+DEBUG:   calcStats                     	[356 94;23 127]
+DEBUG:   calcStats                     	Overall accuracy :80.5
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.351 -n 0.1
+DEBUG:   calcStats                     	[375 75;29 121]
+DEBUG:   calcStats                     	Overall accuracy :82.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.351 -n 0.15
+DEBUG:   calcStats                     	[391 59;40 110]
+DEBUG:   calcStats                     	Overall accuracy :83.5
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.351 -n 0.2
+DEBUG:   calcStats                     	[400 50;42 108]
+DEBUG:   calcStats                     	Overall accuracy :84.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.351 -n 0.25
+DEBUG:   calcStats                     	[414 36;46 104]
+DEBUG:   calcStats                     	Overall accuracy :86.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.401 -n 0.05
+DEBUG:   calcStats                     	[357 93;22 128]
+DEBUG:   calcStats                     	Overall accuracy :80.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.401 -n 0.1
+DEBUG:   calcStats                     	[377 73;28 122]
+DEBUG:   calcStats                     	Overall accuracy :83.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.401 -n 0.15
+DEBUG:   calcStats                     	[392 58;42 108]
+DEBUG:   calcStats                     	Overall accuracy :83.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.401 -n 0.2
+DEBUG:   calcStats                     	[401 49;42 108]
+DEBUG:   calcStats                     	Overall accuracy :84.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.401 -n 0.25
+DEBUG:   calcStats                     	[413 37;48 102]
+DEBUG:   calcStats                     	Overall accuracy :85.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.451 -n 0.05
+DEBUG:   calcStats                     	[361 89;30 120]
+DEBUG:   calcStats                     	Overall accuracy :80.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.451 -n 0.1
+DEBUG:   calcStats                     	[381 69;31 119]
+DEBUG:   calcStats                     	Overall accuracy :83.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.451 -n 0.15
+DEBUG:   calcStats                     	[392 58;46 104]
+DEBUG:   calcStats                     	Overall accuracy :82.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.451 -n 0.2
+DEBUG:   calcStats                     	[404 46;46 104]
+DEBUG:   calcStats                     	Overall accuracy :84.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.451 -n 0.25
+DEBUG:   calcStats                     	[416 34;51 99]
+DEBUG:   calcStats                     	Overall accuracy :85.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.501 -n 0.05
+DEBUG:   calcStats                     	[364 86;29 121]
+DEBUG:   calcStats                     	Overall accuracy :80.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.501 -n 0.1
+DEBUG:   calcStats                     	[378 72;34 116]
+DEBUG:   calcStats                     	Overall accuracy :82.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.501 -n 0.15
+DEBUG:   calcStats                     	[393 57;44 106]
+DEBUG:   calcStats                     	Overall accuracy :83.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.501 -n 0.2
+DEBUG:   calcStats                     	[405 45;49 101]
+DEBUG:   calcStats                     	Overall accuracy :84.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.501 -n 0.25
+DEBUG:   calcStats                     	[418 32;53 97]
+DEBUG:   calcStats                     	Overall accuracy :85.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.551 -n 0.05
+DEBUG:   calcStats                     	[370 80;30 120]
+DEBUG:   calcStats                     	Overall accuracy :81.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.551 -n 0.1
+DEBUG:   calcStats                     	[378 72;29 121]
+DEBUG:   calcStats                     	Overall accuracy :83.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.551 -n 0.15
+DEBUG:   calcStats                     	[395 55;44 106]
+DEBUG:   calcStats                     	Overall accuracy :83.5
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.551 -n 0.2
+DEBUG:   calcStats                     	[403 47;44 106]
+DEBUG:   calcStats                     	Overall accuracy :84.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.551 -n 0.25
+DEBUG:   calcStats                     	[418 32;57 93]
+DEBUG:   calcStats                     	Overall accuracy :85.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.601 -n 0.05
+DEBUG:   calcStats                     	[374 76;31 119]
+DEBUG:   calcStats                     	Overall accuracy :82.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.601 -n 0.1
+DEBUG:   calcStats                     	[379 71;30 120]
+DEBUG:   calcStats                     	Overall accuracy :83.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.601 -n 0.15
+DEBUG:   calcStats                     	[395 55;40 110]
+DEBUG:   calcStats                     	Overall accuracy :84.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.601 -n 0.2
+DEBUG:   calcStats                     	[403 47;45 105]
+DEBUG:   calcStats                     	Overall accuracy :84.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.601 -n 0.25
+DEBUG:   calcStats                     	[415 35;54 96]
+DEBUG:   calcStats                     	Overall accuracy :85.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.651 -n 0.05
+DEBUG:   calcStats                     	[373 77;27 123]
+DEBUG:   calcStats                     	Overall accuracy :82.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.651 -n 0.1
+DEBUG:   calcStats                     	[378 72;29 121]
+DEBUG:   calcStats                     	Overall accuracy :83.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.651 -n 0.15
+DEBUG:   calcStats                     	[396 54;40 110]
+DEBUG:   calcStats                     	Overall accuracy :84.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.651 -n 0.2
+DEBUG:   calcStats                     	[404 46;50 100]
+DEBUG:   calcStats                     	Overall accuracy :84
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.651 -n 0.25
+DEBUG:   calcStats                     	[412 38;57 93]
+DEBUG:   calcStats                     	Overall accuracy :84.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.701 -n 0.05
+DEBUG:   calcStats                     	[377 73;28 122]
+DEBUG:   calcStats                     	Overall accuracy :83.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.701 -n 0.1
+DEBUG:   calcStats                     	[377 73;30 120]
+DEBUG:   calcStats                     	Overall accuracy :82.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.701 -n 0.15
+DEBUG:   calcStats                     	[396 54;40 110]
+DEBUG:   calcStats                     	Overall accuracy :84.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.701 -n 0.2
+DEBUG:   calcStats                     	[402 48;44 106]
+DEBUG:   calcStats                     	Overall accuracy :84.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.701 -n 0.25
+DEBUG:   calcStats                     	[411 39;55 95]
+DEBUG:   calcStats                     	Overall accuracy :84.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.751 -n 0.05
+DEBUG:   calcStats                     	[378 72;28 122]
+DEBUG:   calcStats                     	Overall accuracy :83.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.751 -n 0.1
+DEBUG:   calcStats                     	[379 71;27 123]
+DEBUG:   calcStats                     	Overall accuracy :83.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.751 -n 0.15
+DEBUG:   calcStats                     	[392 58;39 111]
+DEBUG:   calcStats                     	Overall accuracy :83.8333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.751 -n 0.2
+DEBUG:   calcStats                     	[400 50;44 106]
+DEBUG:   calcStats                     	Overall accuracy :84.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.751 -n 0.25
+DEBUG:   calcStats                     	[412 38;55 95]
+DEBUG:   calcStats                     	Overall accuracy :84.5
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.801 -n 0.05
+DEBUG:   calcStats                     	[375 75;29 121]
+DEBUG:   calcStats                     	Overall accuracy :82.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.801 -n 0.1
+DEBUG:   calcStats                     	[377 73;28 122]
+DEBUG:   calcStats                     	Overall accuracy :83.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.801 -n 0.15
+DEBUG:   calcStats                     	[392 58;35 115]
+DEBUG:   calcStats                     	Overall accuracy :84.5
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.801 -n 0.2
+DEBUG:   calcStats                     	[401 49;41 109]
+DEBUG:   calcStats                     	Overall accuracy :85
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.801 -n 0.25
+DEBUG:   calcStats                     	[410 40;60 90]
+DEBUG:   calcStats                     	Overall accuracy :83.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.851 -n 0.05
+DEBUG:   calcStats                     	[374 76;37 113]
+DEBUG:   calcStats                     	Overall accuracy :81.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.851 -n 0.1
+DEBUG:   calcStats                     	[376 74;37 113]
+DEBUG:   calcStats                     	Overall accuracy :81.5
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.851 -n 0.15
+DEBUG:   calcStats                     	[389 61;37 113]
+DEBUG:   calcStats                     	Overall accuracy :83.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.851 -n 0.2
+DEBUG:   calcStats                     	[403 47;45 105]
+DEBUG:   calcStats                     	Overall accuracy :84.6667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.851 -n 0.25
+DEBUG:   calcStats                     	[409 41;59 91]
+DEBUG:   calcStats                     	Overall accuracy :83.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.901 -n 0.05
+DEBUG:   calcStats                     	[375 75;36 114]
+DEBUG:   calcStats                     	Overall accuracy :81.5
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.901 -n 0.1
+DEBUG:   calcStats                     	[378 72;36 114]
+DEBUG:   calcStats                     	Overall accuracy :82
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.901 -n 0.15
+DEBUG:   calcStats                     	[386 64;42 108]
+DEBUG:   calcStats                     	Overall accuracy :82.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.901 -n 0.2
+DEBUG:   calcStats                     	[405 45;44 106]
+DEBUG:   calcStats                     	Overall accuracy :85.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.901 -n 0.25
+DEBUG:   calcStats                     	[418 32;57 93]
+DEBUG:   calcStats                     	Overall accuracy :85.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.951 -n 0.05
+DEBUG:   calcStats                     	[377 73;40 110]
+DEBUG:   calcStats                     	Overall accuracy :81.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.951 -n 0.1
+DEBUG:   calcStats                     	[377 73;40 110]
+DEBUG:   calcStats                     	Overall accuracy :81.1667
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.951 -n 0.15
+DEBUG:   calcStats                     	[386 64;48 102]
+DEBUG:   calcStats                     	Overall accuracy :81.3333
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.951 -n 0.2
+DEBUG:   calcStats                     	[403 47;46 104]
+DEBUG:   calcStats                     	Overall accuracy :84.5
+DEBUG:   doall_task2                   	-s 2 -t 2 -h 0 -e 0.00001 -g 0.951 -n 0.25
+DEBUG:   calcStats                     	[421 29;56 94]
+DEBUG:   calcStats                     	Overall accuracy :85.8333
+DEBUG:   calcStats                     	[279 21;17 83]
+DEBUG:   calcStats                     	Overall accuracy :90.5
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[172 33;55 150]
+DEBUG:   calcStats                     	Overall accuracy :78.5366
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[176 29;54 151]
+DEBUG:   calcStats                     	Overall accuracy :79.7561
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[176 29;43 162]
+DEBUG:   calcStats                     	Overall accuracy :82.439
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[177 28;39 166]
+DEBUG:   calcStats                     	Overall accuracy :83.6585
+DEBUG:   calcStats                     	[328 85;69 342]
+DEBUG:   calcStats                     	Overall accuracy :81.3107
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[171 34;49 156]
+DEBUG:   calcStats                     	Overall accuracy :79.7561
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[169 36;41 164]
+DEBUG:   calcStats                     	Overall accuracy :81.2195
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[168 37;37 168]
+DEBUG:   calcStats                     	Overall accuracy :81.9512
+DEBUG:   calcStats                     	[342 71;70 341]
+DEBUG:   calcStats                     	Overall accuracy :82.8883
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[162 43;44 161]
+DEBUG:   calcStats                     	Overall accuracy :78.7805
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[161 44;40 165]
+DEBUG:   calcStats                     	Overall accuracy :79.5122
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[162 43;36 169]
+DEBUG:   calcStats                     	Overall accuracy :80.7317
+DEBUG:   calcStats                     	[339 74;70 341]
+DEBUG:   calcStats                     	Overall accuracy :82.5243
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[180 25;40 165]
+DEBUG:   calcStats                     	Overall accuracy :84.1463
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[178 27;35 170]
+DEBUG:   calcStats                     	Overall accuracy :84.878
+DEBUG:   doall_task5                   	-s 1 -t 4
+DEBUG:   calcStats                     	[181 24;30 175]
+DEBUG:   calcStats                     	Overall accuracy :86.8293
+DEBUG:   calcStats                     	[338 75;54 357]
+DEBUG:   calcStats                     	Overall accuracy :84.3447
