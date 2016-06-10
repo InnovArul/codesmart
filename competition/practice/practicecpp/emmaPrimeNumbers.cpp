@@ -7,11 +7,12 @@
  *
  * Contributors:
  *     Arulkumar (arul.csecit@ymail.com)
- *     https://www.hackerearth.com/practice/math-1/number-theory-1/primality-tests-1/tutorial/
+ *     https://www.hackerearth.com/problem/algorithm/emma-and-the-prime-sum/
  *******************************************************************************/
+
 #include <stdio.h>
 #include <iostream>
-#include <stdlib.h>
+#include <cstdlib>
 
 using namespace std;
 
@@ -98,15 +99,19 @@ bool isPrime_RabinMiller(int N) {
 int main()
 {
 	int T; scanf("%d", &T);
-	srand (time(NULL));
+	srand (time(NULL));  // !!! VERY IMPORTANT !!!
 
 	for (int test = 0; test < T; ++test) {
-		int N; scanf("%d", &N);
+		int X; scanf("%d", &X);
+		int Y; scanf("%d", &Y);
+		long sum = 0;
 
-		if(isPrime_RabinMiller(N))
-			printf("prime\n");
-		else
-			printf("composite\n");
+		for (int number = X; number <= Y; ++number) {
+			if(isPrime_RabinMiller(number))
+				sum += number;
+		}
+
+		printf("%ld\n", sum);
 	}
 
 	return 0;

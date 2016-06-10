@@ -42,11 +42,11 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.999549557.1860121325" name="millerRabinPrimality.cpp" rcbsApplicability="disable" resourcePath="millerRabinPrimality.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.908974129.360865589">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.908974129.360865589" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.908974129"/>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.999549557.1130007224" name="emmaPrimeNumbers.cpp" rcbsApplicability="disable" resourcePath="emmaPrimeNumbers.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.908974129.2045224298">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.908974129.2045224298" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.908974129"/>
 					</fileInfo>
 					<sourceEntries>
-						<entry excluding="millerRabinPrimality.cpp|strangeMatrix.cpp|cakelayers.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="emmaPrimeNumbersSieve.cpp|gfgMillerRabin.cpp|millerRabinPrimality.cpp|strangeMatrix.cpp|cakelayers.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
