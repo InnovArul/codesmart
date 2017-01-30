@@ -26,8 +26,7 @@ def bilinearInterpolate(img, x, y):
         value = ((1 - modX) * (1 - modY) * topLeft) + \
                 ((1 - modX) * modY * topRight) + \
                 (modX * (1 - modY) * bottomLeft) + \
-                (modX * modY * topRight);
-
+                (modX * modY * bottomRight);
 
     return value
 
