@@ -1,10 +1,11 @@
-function value = bilinearInterpolate(img, x, y)
+function [value, isValid] = bilinearInterpolate(img, x, y)
     % get the dimension of the image
     [height, width] = size(img);
     value = 0;
     
-    if(x < 1 || x > height) return; end
-    if(y < 1 || y > width) return; end
+    if(x < 1 || x > height) isValid = 0; return; end
+    if(y < 1 || y > width) isValid = 0; return; end
+    isValid = 1; 
 
     modX = mod(x, 1);
     modY = mod(y, 1);
