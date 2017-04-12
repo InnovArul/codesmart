@@ -42,11 +42,19 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+<<<<<<< HEAD
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.999549557.1024696726" name="medianByMinHeap.cpp" rcbsApplicability="disable" resourcePath="medianByMinHeap.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.908974129.1771701329">
 						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.908974129.1771701329" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.908974129"/>
 					</fileInfo>
 					<sourceEntries>
 						<entry excluding="medianByMinHeap.cpp|minheap.cpp|geeksforgeeksMillerRabin.cpp|emmaPrimeNumbers.cpp|emmaPrimeNumbersSieve.cpp|gfgMillerRabin.cpp|millerRabinPrimality.cpp|strangeMatrix.cpp|cakelayers.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+=======
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.999549557.413562856" name="balancedBrackets.cpp" rcbsApplicability="disable" resourcePath="balancedBrackets.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.908974129.1260314656">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.908974129.1260314656" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.908974129"/>
+					</fileInfo>
+					<sourceEntries>
+						<entry excluding="balancedBrackets.cpp|medianByMinHeap.cpp|minheap.cpp|geeksforgeeksMillerRabin.cpp|emmaPrimeNumbers.cpp|emmaPrimeNumbersSieve.cpp|gfgMillerRabin.cpp|millerRabinPrimality.cpp|strangeMatrix.cpp|cakelayers.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+>>>>>>> f1521349af8d283afd34638217fd40a24918f807
 					</sourceEntries>
 				</configuration>
 			</storageModule>
