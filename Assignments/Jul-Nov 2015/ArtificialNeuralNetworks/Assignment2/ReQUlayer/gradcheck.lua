@@ -1,4 +1,4 @@
-require 'requ'
+require 'lbp'
 require 'torch'
 require 'math'
 
@@ -7,8 +7,8 @@ require 'math'
 -- 
 
 data = {
-    inputs = torch.Tensor({1, 2, 3, 4}),
-    targets = torch.Tensor({1, 9, 16})
+    inputs = torch.Tensor(1,7,7):rand(1,7,7),
+    targets = 1
 }
 
 --- Include your model with the ReQu Layer. 
@@ -22,15 +22,17 @@ data = {
   -- MODEL:
   --     linear -> requ -> linear -> softmax
   local model = nn.Sequential()
-  model:add(nn.Linear(n_inputs, embedding_dim))
-  model:add(nn.ReQU())
-  model:add(nn.Linear(embedding_dim, n_classes))
+  model:add(nn.SpatialConvolution(1,1,3,3))
+  model:add(nn.View(5,5))
+  model:add(nn.lbp())
+  model:add(nn.View(9))
+  model:add(nn.Linear(9,3))
   model:add(nn.LogSoftMax())
 
   ------------------------------------------------------------------------------
   -- LOSS FUNCTION
   ------------------------------------------------------------------------------
-  local criterion = nn.MSECriterion()
+  local criterion = nn.ClassNLLCriterion()
  
  
  if model then
