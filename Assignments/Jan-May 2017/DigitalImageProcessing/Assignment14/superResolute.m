@@ -52,3 +52,5 @@ legend({'original x', 'reconstructed x'});
 
 MSE = norm(x' - x1)
 
+saveas(gca, fullfile('./output/origVsReconstructedX.png'));
+close all;

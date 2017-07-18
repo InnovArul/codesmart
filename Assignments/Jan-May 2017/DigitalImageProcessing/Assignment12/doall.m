@@ -65,7 +65,7 @@ else
                     currentI = i + (Wsim + Wsearch);
                     currentJ = j + (Wsim + Wsearch);
                     
-                    [~, ~, ~, filteredImg(i, j, :)] = getNLMFilteredPixel(unpaddedNoisyImg, currentI, currentJ, Wsim, Wsearch, sigmaNLM);
+                    [~, ~, ~, filteredImg(i, j, :)] = getNLMFilteredPixel(noisyImg, currentI, currentJ, Wsim, Wsearch, sigmaNLM);
                     
                 end
                 toc
