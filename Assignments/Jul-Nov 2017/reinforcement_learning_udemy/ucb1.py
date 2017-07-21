@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from pathlib import Path
 import os
 
 class Bandit:
@@ -23,7 +22,7 @@ class Bandit:
 # N = number of events/tries
 # eps = for explore/exploit 
 #
-def run_experiments(m1, m2, m3, N, eps):
+def run_experiments(m1, m2, m3, N, eps, isUCB=True):
     # create 3 bandits
     bandits = [Bandit(m1), Bandit(m2), Bandit(m3)]
     data = np.empty(N)
@@ -31,10 +30,16 @@ def run_experiments(m1, m2, m3, N, eps):
     for i in range(N):
         # epsilon explore-exploit dilemma
         p = np.random.random()
-        if(p < eps):
-            j = np.random.choice(3)
+        if(not isUCB):
+            if(p < eps):
+                # if no UCB, then its a default epsilon explore-exploit problem
+                j = np.random.choice(3)
+            else:
+                # incase of default epsilon explore-exploit problem, explore step
+                j = np.argmax([b.running_mean for b in bandits])
         else:
-            j = np.argmax([b.running_mean for b in bandits])
+            # incase of UCB, explore always the Bandit which has higher mean, as it is not explored much
+            j = np.argmax([b.running_mean + np.sqrt(2 * np.log(i + 1) / (b.N + 0.000001)) for b in bandits])
             
         X = bandits[j].pull()
         bandits[j].update(X)
@@ -45,21 +50,18 @@ def run_experiments(m1, m2, m3, N, eps):
     return cumulative_avg
     
 if(__name__ == '__main__'):
+    c_noucb = run_experiments(1., 2., 3., 100000, 0.2, isUCB=False)
+    c_ucb = run_experiments(1., 2., 3., 100000, 0.2, isUCB=True)
     
-    c_1 = run_experiments(1., 2., 3., 100000, 0.1)
-    c_2 = run_experiments(1., 2., 3., 100000, 0.2)
-    c_3 = run_experiments(1., 2., 3., 100000, 0.3)
-    
-    plt.plot(c_1, label='eps = 0.1')
-    plt.plot(c_2, label='eps = 0.2')
-    plt.plot(c_3, label='eps = 0.3')
+    plt.plot(c_noucb, label='eps = 0.2, no ucb')
+    plt.plot(c_ucb, label='eps = 0.2, ucb')
     plt.legend()
     plt.xscale('log')
     plt.savefig('./pics/'+ os.path.splitext(__file__)[0] + '_logplot.jpg')
     plt.clf()
-    
-    plt.plot(c_1, label='eps = 0.1')
-    plt.plot(c_2, label='eps = 0.2')
-    plt.plot(c_3, label='eps = 0.3')
+
+    plt.plot(c_noucb, label='eps = 0.2, no ucb')
+    plt.plot(c_ucb, label='eps = 0.2, ucb')
     plt.legend()
-    plt.savefig('./pics/'+ os.path.splitext(__file__)[0] + '_plot.jpg')  
+    plt.savefig('./pics/'+ os.path.splitext(__file__)[0] + '_plot.jpg')
+    plt.clf()
