@@ -16,7 +16,7 @@ class Bandit:
     # update the running mean
     def update(self, Xn):
         self.N += 1
-        self.running_mean = (1 - (1 / self.N)) * self.running_mean + (1 / self.N) * Xn
+        self.running_mean = (1 - (1.0 / self.N)) * self.running_mean + (1.0 / self.N) * Xn
 
 #
 # m1, m2, m3 = rewards of 3 bandits

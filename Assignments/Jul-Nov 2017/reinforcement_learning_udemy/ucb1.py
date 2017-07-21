@@ -15,7 +15,7 @@ class Bandit:
     # update the running mean
     def update(self, Xn):
         self.N += 1
-        self.running_mean = (1 - (1 / self.N)) * self.running_mean + (1 / self.N) * Xn
+        self.running_mean = (1 - (1.0 / self.N)) * self.running_mean + (1.0 / self.N) * Xn
 
 #
 # m1, m2, m3 = rewards of 3 bandits
@@ -39,7 +39,7 @@ def run_experiments(m1, m2, m3, N, eps, isUCB=True):
                 j = np.argmax([b.running_mean for b in bandits])
         else:
             # incase of UCB, explore always the Bandit which has higher mean, as it is not explored much
-            j = np.argmax([b.running_mean + np.sqrt(2 * np.log(i + 1) / (b.N + 0.000001)) for b in bandits])
+            j = np.argmax([b.running_mean + np.sqrt(2 * np.log(i + 1.0) / (b.N + 0.000001)) for b in bandits])
             
         X = bandits[j].pull()
         bandits[j].update(X)
