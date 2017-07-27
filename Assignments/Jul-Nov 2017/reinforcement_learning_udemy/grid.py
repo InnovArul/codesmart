@@ -21,7 +21,7 @@ class Grid:
     
     def is_terminal(self, s):
         # no actions for terminal state
-        return s not in actions
+        return s not in self.actions
     
     def move(self, action):
         if action in self.actions[(self.i, self.j)]:
