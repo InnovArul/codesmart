@@ -6,19 +6,19 @@ EPS = 10e-4
 
 def print_values(V, g): # value of states, g = grid
     for i in range(g.width):
-        print '---------------------'
+        print('---------------------')
         for j in range(g.height):
             v = V.get((i, j), 0)
-            print '%0.2f' % v,
-        print ''
+            print('  %-0.2f  ' % v, end='')
+        print('')
         
 def print_policy(P, g): # value of states, g = grid
     for i in range(g.width):
-        print '-----------------------------'
+        print('-----------------------------')
         for j in range(g.height):
             p = P.get((i, j), 0)
-            print '  %s  |' % p,
-        print ''
+            print('  %s  |' % p, end='')
+        print('')
 
 # main loop
 if(__name__ == '__main__'):
@@ -53,9 +53,9 @@ if(__name__ == '__main__'):
         if(diff < EPS):
             break
     
-    print 'values for uniform random actions'
+    print('values for uniform random actions')
     print_values(V, grid)
-    print "\n\n"
+    print("\n\n")
 
     #-------------------------------------------------------------------
     # fixed policy
@@ -96,6 +96,6 @@ if(__name__ == '__main__'):
             break
     
     print('\n\n')
-    print 'values for fixed policy'
+    print('values for fixed policy')
     print_values(V, grid)
-    print "\n\n"
+    print("\n\n")
