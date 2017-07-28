@@ -1,41 +1,44 @@
+from __future__ import print_function
 import numpy as np
 from grid import standard_grid, negative_grid
 from iterative_policy_evaluation import print_values, print_policy
 import matplotlib.pyplot as plt
+from monte_carlo_exploring_starts import max_dict
 
 EPS = 1e-4
 GAMMA = 0.9
 ALL_POSSIBLE_ACTIONS = {'U', 'D', 'L', 'R'}
 
+def random_action(a, eps=0.1):
+    p = np.random.random()
+    if(p < 1 - eps):
+        return a
+    else:
+        return np.random.choice(list(ALL_POSSIBLE_ACTIONS))
+
 # monte carlo sampling - finding out optimal policy (policy iteration)
 def play_game(grid, policy):
     all_states = list(grid.actions.keys())
-    state = all_states[np.random.choice(len(all_states))]
-    a = np.random.choice(list(ALL_POSSIBLE_ACTIONS))
+    state = (2, 0)
+    # instead of taking random action at first step, consider the action which is probabilistic with the policy
+    a = random_action(policy[state])
     
     grid.set_state(state)
     states_actions_rewards = [(state, a, 0)] # action is corresponding to the one which is going to be taken
-    seen_states = set()
     
     while True:
-        prev_state = state
         r = grid.move(a)
         state = grid.current_state()
         #print(prev_state)
         
-        # the agent should not go to same states
-        if state in seen_states:
-            states_actions_rewards.append((state, None, -100)) # agent has hit the wall and we should not allow it to happen
-            break
-        elif grid.game_over():
-            states_actions_rewards.append((state, None, r)) # agent has reached the goal
+        # if game over, break the loop
+        if  grid.game_over():
+            states_actions_rewards.append((state, None, r)) # agent has hit the wall and we should not allow it to happen
             break
         else:
             # collect the next action that we are gonna take and insert into the trace
-            a = policy[state]
+            a = random_action(policy[state])
             states_actions_rewards.append((state, a, r))
-        
-        seen_states.add(state)
         
     # calculate the returns by working backwards from terminal state
     G = 0
@@ -61,7 +64,7 @@ def max_dict(hash):
 
 if __name__ == '__main__':
     #grid = standard_grid()
-    grid = negative_grid(-1)
+    grid = negative_grid(-0.1)
     print('grid')
     print_values(grid.rewards, grid)
     
