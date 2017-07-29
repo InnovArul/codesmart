@@ -41,6 +41,8 @@ if(__name__ == '__main__'):
             old_v = V[s]
             if(s in grid.actions):
                 new_v = 0
+                
+                # uniform probability on actions
                 p_a = 1.0 / len(grid.actions[s])
                 
                 for a in grid.actions[s]:
