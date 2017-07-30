@@ -2,7 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from iterative_policy_evaluation import print_values, print_policy
 from grid import standard_grid, negative_grid
-from sarsa_value_iteration import max_dict, ALPHA, EPS, GAMMA, ALL_POSSIBLE_ACTIONS
+from sarsa_value_iteration import ALPHA, EPS, GAMMA, ALL_POSSIBLE_ACTIONS
+from monte_carlo_exploring_starts import max_dict
 from td0_learning_policy_evaluation import random_action
 
 class Model:
@@ -12,12 +13,12 @@ class Model:
     def get_features_for_action(self, s, a, target_a):
         if a == target_a:
             return np.array([
-                s[0] - 1                            if a == 'U' else 0,
-                s[1] - 1.5                          if a == 'U' else 0,
-                (s[0]*s[1] - 3) / 3                 if a == 'U' else 0,
-                (s[0]*s[0] - 2) / 2                 if a == 'U' else 0,
-                (s[1]*s[1] - 4.5)/4.5               if a == 'U' else 0,
-                1                                   if a == 'U' else 0,
+                s[0] - 1,
+                s[1] - 1.5,
+                (s[0]*s[1] - 3) / 3,
+                (s[0]*s[0] - 2) / 2,
+                (s[1]*s[1] - 4.5)/4.5,
+                1
             ])
         else:
             return np.zeros(6)
@@ -27,7 +28,7 @@ class Model:
         out = np.append(out, self.get_features_for_action(s, a, 'D'))
         out = np.append(out, self.get_features_for_action(s, a, 'L'))
         out = np.append(out, self.get_features_for_action(s, a, 'R'))
-        return np.append(out, [1])
+        return np.append(out, [1.0])
         
     def forward(self, s, a):
         return self.theta.dot(self.s2x(s, a))
@@ -44,7 +45,7 @@ def getQs(model, s):
 
 if __name__ == '__main__':
     
-    grid = negative_grid()
+    grid = negative_grid(step_cost=-0.1)
     
     print('rewards')
     print_values(grid.rewards, grid)
@@ -97,8 +98,9 @@ if __name__ == '__main__':
     plt.show()        
 
     V = {}
+    policy = {}
     for s in grid.actions:
-        V[s] = max_dict(getQs(model, s))[1]
+        policy[s], V[s] = max_dict(getQs(model, s))
     
     print('values')
     print_values(V, grid)
