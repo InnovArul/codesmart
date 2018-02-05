@@ -1,0 +1,4 @@
+trainTestListCreation.py - to create train and test list based on a train_test split file
+featExtractListCreation.py - to create a list file for feature extraction
+
+the model c3d_hmdb51_iter_20000.caffemodel is fined tuned over c3d_resnet18_sports1m_r2_iter_2800000.caffemodel using split1
