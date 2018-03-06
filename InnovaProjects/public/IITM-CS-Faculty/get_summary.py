@@ -12,6 +12,11 @@ data_root = './data'
 #       'Coordinator', 'CC Chairperson', 'Strength', 'Allocation Type'],
 #      dtype='object')
 
+project_font = xlwt.easyfont('colour light_blue, bold True')
+core_font = xlwt.easyfont('colour red, bold True')
+elective_font = xlwt.easyfont('colour green, bold True')
+bg_style = xlwt.easyxf('pattern: pattern solid, fore_colour white;')
+
 def read_csv_files():
     contents = {}
     
@@ -37,6 +42,22 @@ def collect_faculty_names(contents):
     
     return sorted(faculties)
 
+def get_type_of_course(course_id, course_name):
+    course_name_lower = course_name.lower()
+    
+    # determine type of course (CORE, ELECTIVE)
+    if('project' in course_name_lower
+        or 'seminar' in course_name_lower):
+        course_type = 'PROJECT'
+    elif(course_id.startswith('CS1')
+        or course_id.startswith('CS2')
+        or course_id.startswith('CS3')):
+        course_type = 'CORE'
+    else:
+        course_type = 'ELECTIVE'
+    
+    return course_type
+
 def get_course_ids_names(contents):
     # for each semester, go through the details and collect unique faculty names
     course_id_names = {}
@@ -47,11 +68,18 @@ def get_course_ids_names(contents):
             
             # if the course is not already seen, add it to the list
             if course_norm_id not in course_id_names:
-                course_id_names[course_norm_id] = []
-                
+                course_id_names[course_norm_id] = {}
+                course_id_names[course_norm_id]['name'] = []
+                course_id_names[course_norm_id]['type'] = []
+            
+            current_course_names = course_id_names[course_norm_id]['name']
+            current_course_types = course_id_names[course_norm_id]['type']
+            
             # some courses would have multiple names per semester, so collect those names as well
-            if course_norm_name not in course_id_names[course_norm_id]:
-                course_id_names[course_norm_id].append(course_norm_name)
+            if course_norm_name not in current_course_names:
+                current_course_names.append(course_norm_name)
+            
+            current_course_types.append(get_type_of_course(course_norm_id, course_norm_name))
 
     return course_id_names
 
@@ -113,16 +141,27 @@ def write_faculty_course_details(wb, course_details_by_faculty, faculties, cours
             colx += 1
             ws.col(0).width = 4000
             
-            course_details_string = ''
+            course_details = ()
             
             if faculty in course_details_by_faculty and semester in course_details_by_faculty[faculty]:
-
                 for course_id_strength in course_details_by_faculty[faculty][semester]:
-                    if course_id_strength[1] != 0:
-                        course_details_string += course_id_strength[0] + ' (' + str(course_id_strength[1]) + ')\n'
-            
-            ws.write(rowx, colx, course_details_string)
+                    course_id = course_id_strength[0]
+                    course_strength = course_id_strength[1]
+                    course_types = course_id_names[course_id]['type']
+                    font = get_font_from_course_type(course_types)
+                    if course_strength != 0 and 'PROJECT' not in course_types:
+                        course_details += ((course_id + ' (' + str(course_strength) + ')\n', font), )
         
+            ws.write_rich_text(rowx, colx, course_details, bg_style)
+    
+def get_font_from_course_type(course_types):
+    font = elective_font
+    if 'PROJECT' in course_types:
+        font = project_font
+    elif 'CORE' in course_types:
+        font = core_font
+    
+    return font
 
 def write_course_details(wb, course_id_names):
     ws = wb.add_sheet("Course-details")
@@ -146,21 +185,22 @@ def write_course_details(wb, course_id_names):
 
     course_ids = sorted(list(course_id_names.keys()))
     for course_id in course_ids:
-        course_names = course_id_names[course_id]
+        course_names = course_id_names[course_id]['name']
         rowx += 1
-        ws.write(rowx, 0, course_id)
-        ws.write(rowx, 1, ', '.join(course_names))
+        font = get_font_from_course_type(course_id_names[course_id]['type'])
+        ws.write_rich_text(rowx, 0, ((course_id, font),), bg_style)
+        ws.write_rich_text(rowx, 1, ((', '.join(course_names), font),), bg_style)
 
-def write_into_excel_sheet(course_details_by_faculty, faculties, course_id_names, 
+def write_into_excel_sheet(course_details_by_faculty, faculties, course_id_names_types, 
                             start_year, end_year, all_semesters):
     wb = xlwt.Workbook()
     
     # write the faculty course details       
-    write_faculty_course_details(wb, course_details_by_faculty, faculties, course_id_names, 
-                            start_year, end_year, all_semesters)
+    write_faculty_course_details(wb, course_details_by_faculty, faculties, course_id_names_types, 
+                                 start_year, end_year, all_semesters)
     
     # write the names of courses with ids
-    write_course_details(wb, course_id_names)
+    write_course_details(wb, course_id_names_types)
     
     wb.save("myworkbook.xls")    
 
@@ -174,7 +214,7 @@ if __name__ == '__main__':
     #print(('faculties', faculties, len(faculties)))
     
     # collect unique course IDs
-    course_id_names = get_course_ids_names(contents)
+    course_id_names_types = get_course_ids_names(contents)
     #print(('course_id_names', course_id_names, len(course_id_names)))
     
     # collect course details for each faculty
@@ -183,4 +223,4 @@ if __name__ == '__main__':
     
     # write the details into excel sheet
     write_into_excel_sheet(course_details_by_faculty, faculties, 
-                           course_id_names, 2015, 2018, list(contents))
+                           course_id_names_types, 2015, 2018, list(contents))
