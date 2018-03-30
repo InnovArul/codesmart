@@ -9,14 +9,14 @@ class SGDRegressor:
 
         print('hello theano!')
         w = np.random.randn(D) / np.sqrt(D)
-        self.w = theano.shared(self.w)
-        self.lr = 10e-2
+        self.w = theano.shared(w)
+        self.lr = 0.01
 
         X = T.matrix('X')
-        Y = T.matrix('Y')
+        Y = T.vector('Y')
         Y_hat = X.dot(self.w)
         delta = Y - Y_hat
-        cost = delta.dot(delta)
+        cost = T.mean(delta.dot(delta))
         grad = T.grad(cost, self.w)
 
         updates = [(self.w, self.w - self.lr * grad)]
@@ -27,7 +27,7 @@ class SGDRegressor:
         )
 
         self.predict_op = theano.function(
-            inputs=[X, Y],
+            inputs=[X],
             outputs=Y_hat
         )
 

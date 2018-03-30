@@ -81,7 +81,7 @@ class Model:
             return np.argmax(p)
 
 
-def play_one(model, eps, gamma):
+def play_one(model, env, eps, gamma):
     observation = env.reset()
     done = False
     totalreward = 0
@@ -92,8 +92,8 @@ def play_one(model, eps, gamma):
         prev_observation = observation
         observation, reward, done, info = env.step(action)
 
-        if done and totalreward < 199:
-            reward = -200
+        if done and totalreward < 198:
+            reward = -300
 
         # update the model with actual return
         #print(model.predict(observation).shape)
@@ -139,12 +139,11 @@ def play_best_policy(model, env):
 def main():
     env = gym.make('CartPole-v0')
     feature_transformer = FeatureTransformer(env)
-    learning_rate = 0.01
     model = Model(env, feature_transformer, "constant")
 
     gamma = 0.99
     total_rewards = []
-    N = 300
+    N = 400
 
     if "monitor" in sys.argv:
         filename = os.path.basename(__file__).split(".")[0]
@@ -153,8 +152,8 @@ def main():
 
     # play 10000 episodes
     for n in range(N):
-        eps = 0.1 * (0.97**n)
-        total_reward = play_one(model, eps, gamma)
+        eps = 1. / np.sqrt(n + 1)
+        total_reward = play_one(model, env, eps, gamma)
         total_rewards.append(total_reward)
 
         if n % 10 == 0:
