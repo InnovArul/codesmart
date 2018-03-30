@@ -9,28 +9,28 @@ from datetime import datetime
 from sklearn.pipeline import FeatureUnion
 from sklearn.preprocessing import StandardScaler
 from sklearn.kernel_approximation import RBFSampler
-from sklearn.linear_model import SGDRegressor
 import numpy as np
 
 
 class FeatureTransformer:
     def __init__(self, env):
         # sample the states and scale them
-        observation_examples = np.array([env.observation_space.sample() for _ in range(10000)])
+        observation_examples = np.random.random((20000, 4))*2 - 1
         scaler = StandardScaler()
         scaler.fit(observation_examples)
 
         # featurizer to union the RBF features
         featurizer = FeatureUnion([
-            ("rbf1", RBFSampler(gamma=5.0, n_components=500)),
-            ("rbf2", RBFSampler(gamma=2.0, n_components=500)),
-            ("rbf3", RBFSampler(gamma=1.0, n_components=500)),
-            ("rbf4", RBFSampler(gamma=0.5, n_components=500)),
+            ("rbf1", RBFSampler(gamma=0.05, n_components=1000)),
+            ("rbf2", RBFSampler(gamma=1.0, n_components=1000)),
+            ("rbf3", RBFSampler(gamma=0.5, n_components=1000)),
+            ("rbf4", RBFSampler(gamma=0.1, n_components=1000)),
         ])
 
-        featurizer.fit_transform(scaler.transform(observation_examples))
+        feature_examples = featurizer.fit_transform(scaler.transform(observation_examples))
 
         self.scaler = scaler
+        self.dimensions = feature_examples.shape[1] # 4 components
         self.featurizer = featurizer
 
     def transform(self, observations):
@@ -38,6 +38,17 @@ class FeatureTransformer:
         scaled = self.scaler.transform(observations)
         # featurize
         return self.featurizer.transform(scaled)
+
+class SGDRegressor:
+    def __init__(self, D):
+        self.w = np.random.randn(D) / np.sqrt(D)
+        self.lr = 1e-2
+
+    def partial_fit(self, X, Y):
+        self.w += self.lr * (Y - X.dot(self.w)).dot(X)
+
+    def predict(self, X):
+        return X.dot(self.w)
 
 
 class Model:
@@ -48,17 +59,17 @@ class Model:
 
         # create a model for each action
         for action in range(env.action_space.n):
-            model = SGDRegressor(learning_rate=learning_rate)
+            model = SGDRegressor(feature_transformer.dimensions)
             # SGDRegressor expects the partial_fit to be called atleast once before predicting
             model.partial_fit(feature_transformer.transform([env.reset()]), [0])
             self.models.append(model)
 
     def predict(self, observation):
-        X = self.feature_transformer.transform([observation])
+        X = self.feature_transformer.transform(np.atleast_2d(observation))
         return np.array([m.predict(X)[0] for m in self.models])
 
     def update(self, observation, action, G):
-        X = self.feature_transformer.transform([observation])
+        X = self.feature_transformer.transform(np.atleast_2d(observation))
         self.models[action].partial_fit(X, [G])
 
     # sample action : epsilon greedy strategy
@@ -81,6 +92,9 @@ def play_one(model, eps, gamma):
         prev_observation = observation
         observation, reward, done, info = env.step(action)
 
+        if done and totalreward < 199:
+            reward = -200
+
         # update the model with actual return
         #print(model.predict(observation).shape)
         G = reward + gamma * np.max(model.predict(observation)[0])
@@ -89,25 +103,6 @@ def play_one(model, eps, gamma):
         totalreward += reward
 
     return totalreward
-
-
-def plot_cost_to_go(env, estimator, num_tiles=20):
-    # get X Y values
-    x = np.linspace(env.observation_space.low[0], env.observation_space.high[0], num=num_tiles)
-    y = np.linspace(env.observation_space.low[0], env.observation_space.high[0], num=num_tiles)
-    X, Y = np.meshgrid(x, y)
-
-    Z = np.apply_along_axis(lambda _: -np.max(estimator.predict(_)), 2, np.dstack([X, Y]))
-    fig = plt.figure(figsize=(10, 5))
-    ax = fig.add_subplot(111, projection='3d')
-    surf = ax.plot_surface(X, Y, Z,
-                           rstride=1, cstride=1, cmap=matplotlib.cm.coolwarm, vmin=-1.0, vmax=1.0)
-    ax.set_xlabel('Position')
-    ax.set_ylabel('Velocity')
-    ax.set_zlabel('Cost-To-Go == -V(s)')
-    ax.set_title("Cost-To-Go Function")
-    fig.colorbar(surf)
-    plt.show()
 
 
 # calculate moving average
@@ -141,8 +136,8 @@ def play_best_policy(model, env):
 
     print('total reward : ' + str(total_reward))
 
-if __name__ == '__main__':
-    env = gym.make('MountainCar-v0')
+def main():
+    env = gym.make('CartPole-v0')
     feature_transformer = FeatureTransformer(env)
     learning_rate = 0.01
     model = Model(env, feature_transformer, "constant")
@@ -169,8 +164,8 @@ if __name__ == '__main__':
     print("total steps : ", np.sum(total_rewards))
     plot_running_avg(total_rewards)
 
-    # plot optimal state value function
-    plot_cost_to_go(env, model)
-
     # play best policy
     play_best_policy(model, env)
+
+if __name__ == '__main__':
+    main()
