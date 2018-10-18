@@ -7,6 +7,7 @@ from datetime import datetime
 import gym_rbf_mountaincar
 from gym_rbf_mountaincar import plot_running_avg, Model, FeatureTransformer, plot_cost_to_go, play_best_policy
 
+# a custom simple SGD regressor
 class SGDRegressor():
     def __init__(self, **kwargs):
         self.lr = 10e-3
