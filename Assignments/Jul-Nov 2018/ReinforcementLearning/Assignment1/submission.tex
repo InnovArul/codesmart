@@ -1,0 +1,184 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=0.7in,top=0.8in,right=0.7in,bottom=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\title{CS6700 Reinforcement learning\\ Assignment-I}
+\author{Arulkumar S (CS15D202)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Problem 1}
+Consider a finite horizon MDP with $N$ stages. Suppose there $n$ possible states in each stage and $m$ actions in each state. Why is the DP algorithm computationally less intensive as compared to an approach that calculates the expected cost $J^\pi$ for each policy $\pi$? Argue using the number of operations required for both algorithms, as a function of $m, n$ and $N$.
+\subsubsection*{Solution}
+
+The naive approach of enumerating all possible actions and their resulting states at every time stage will yield exponential time complexity. Let there be $n$ states, $m$ actions per state and $N$ stages in the given finite horizon MDP. The time complexity for calculating the expected cost $J^\pi$ for each policy $\pi$ is given by,
+
+\begin{equation*}
+    \text{Total expected cost} = m^{nN}
+\end{equation*}
+i.e., At each stage, for each state, there are $m$ possible actions. Determining an optimal policy in such a way by enumerating all possible policies is computationally intensive.
+
+By using Dynamic programming (DP) algorithm, a function/buffer $J_t(x_k)$ is defined for each state $x_k$ at stage $t$ to hold the cost of moving to that particular state from previous stage. The per-stage-cost function is defined as,
+
+\begin{flalign*}
+    J_N(x_N) &= g_N(x_N)\\
+    J_t(x_t) &= min_{a_t} E_{x_{t+1}}\{g_t(x_t, a_t, x_{t+1}) + J_{t+1}(x_{t+1})\}
+\end{flalign*}
+
+Hence, to evaluate the value functions of all states at every state from backwards, for each state $x_t$ and every action $a_t$ at stage $t$, we have to aggregate over all the states $x_{t+1}$ at stage $t+1$. The total time complexity is $Nmn^2$ which is much lesser than the naive version of evaluating policy by enumerating all policies.
+
+
+
+
+%\subsubsection*{References}
+%\href{https://piazza-resources.s3.amazonaws.com/i7w20eqdso51qs/i7z4unc2fq96rf/finitehorizonMDP.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAR6AWVCBXVGXMDO4E%2F20180826%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20180826T133504Z&X-Amz-Expires=10800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=FQoGZXIvYXdzEHQaDLvk8rqTRIzwCTgenyK3A%2BfL0Q6CyOgQf83ikBnurlGRV4qpGLKj9B0zraJ6S%2BrJkYOPh0QY2bmFylKivg0zeB8ae5S8KFUfeoUCOQN2V8LGaHWb1v5Vidud9T%2BAksD6GuokuDtE8N5%2B8UEYZt86%2Bq%2BLapFn4gdXceoUqaD%2BD62B8wXwdcQTjg0sDxLJTDCGxKvlSvokeIrq%2B21%2FEWdGSDr2%2F7qS0SK%2BpK%2BL7UB2wMCdTBOKIIvHFZrNb6vpmb2hsKtV9TAzlPjYl83%2BUbYmqSc0GoCuEdr11tNLqV%2B1K3h9xVNxnaf5rIxvm2Eb3BvwKuMASV4hZIP%2BgUIYu52qYMOuef84TH7MXxjxGUosGvpuDgPCRMjpdgSgu97WB5tLrvoQ8z%2FIOg%2FtIBxg3AZRpJyDYbNSHSYpHjXRb1Un%2BhrMsvZDDDmlP4klf9qIztje4kmCUkOs0b0qack4NXCAy3d6kNak6SzWJEJDcX4M179xTkV8Z36z5jQKjAxvvQLbfUQFnqV6Ekmj39Ck%2FYxns4QCaJkjPEQRmcw3ST%2FGeu7tCKzt%2FdlvZDb9rB8wSzOSxRnVe3aU39RB2tM02kq4wNZC0ta55Koo%2FIeK3AU%3D&X-Amz-Signature=e50d2ff34ecb1aa3a42ae30cbb6f076d0ad5a949e3e02af5e1527a9ed83aa233}{Slides from Prof.Alan Fern}
+\subsection*{Problem 2}
+\subsubsection*{Solution:}
+
+The expected cost objective $J_\pi(x_0)$ = $E\left[exp\left(g_N(x_N) + \sum_{k=0}^{N-1} g_k(x_k, \mu_k(x_k), x_{k+1}\right)\right]$
+
+i) To prove the DP algorithm, we can use the induct ,ion method of proof. Let, 
+\[
+J_N(x_N) = exp(g_N(x_N))
+\] Now we assume that $J_{k+1}(x_{k+1}) = J_{k+1}(x_{k+1})$.
+
+\begin{flalign*}
+J_k(x_k) &= min_{a_k \in A(x_k)} E\left[exp(g_N(x_N)).exp(g_k(x_k, a_k, x_{k+1})) \prod_{j=k+1}^{N-1} exp(g_j(x_j,  a_j, x_{j+1})) \right]\\
+&= min_{a_k \in A(x_k)} E\left[exp(g_k(x_k, a_k, x_{k+1})). exp\left(g_N(x_N) + \sum_{j=k+1}^{N-1} g_j(x_j,  a_j, x_{j+1})\right) \right]\\
+&= min_{a_k \in A(x_k)} E\left[exp(g_k(x_k, a_k, x_{k+1})).J_{k+1}(x_{k+1})\right]
+\end{flalign*}
+
+
+ii) Consider that the single stage cost $g_k$ is a function of $x_k$ and $a_k$ only. let $V_N(x_N) = log J_N(x_N) = g_N(x_N)$.
+
+The cost of a particular state $x_k$ at stage $k$ is given by,
+
+\begin{flalign*}
+V_k(x_k) &= min_{a_k \in A(x_k)} \log E_{x_{k+1}}\left[exp(g_k(x_k, a_k)). exp\left(g_N(x_N) + \sum_{j=k+1}^{N-1} g_j(x_j,  a_j)\right) \right]\\
+&= min_{a_k \in A(x_k)} \log exp(g_k(x_k, a_k)) + \log E_{x_{k+1}}\left[exp\left(g_N(x_N) + \sum_{j=k+1}^{N-1} g_j(x_j,  a_j)\right) \right]\\
+&= min_{a_k \in A(x_k)} \left(g_k(x_k, a_k)) + \log E_{x_{k+1}}\left[exp\left(V_{k+1}(x_{k+1})\right) \right]\right)\\
+\end{flalign*}
+
+\subsection*{Problem 3}
+\subsubsection*{Solution:}
+There are two actions $A = \{buy, notbuy\}$ at every state $x_k$. Let $x_{k+1}$ be the next state and T be the terminal state.
+
+\[
+x_{k+1} = 
+\begin{cases}
+T, & \text{if } x_k = T \text{ (or) } (x_k \ne T \text{ \& } a_k = buy) \\
+N-k-1 & \text{otherwise}
+\end{cases}
+\]
+
+The associated cost at every stage is defined as below:
+
+\begin{flalign*}
+g_N(x_N) &= \begin{cases}
+\frac{1}{1-p} & \text{if } x_N \ne T\\
+0, & \text{otherwise}
+\end{cases}\\
+g_k(x_k, a_k, x_{k+1}) &= \begin{cases}
+px_k & \text{if } x_k = T \text{ and } a_k = buy\\
+0 & \text{otherwise}
+\end{cases}
+\end{flalign*}
+
+
+\paragraph{DP algorithm:}
+
+\begin{flalign*}
+J_N(x_N) &= g_N(x_N)\\
+J_k(x_k) &= \min_{a_k \in \{buy, notbuy\}} E_{x_{k+1}} \left[g(x_k, a_k, x_{k+1}) + J_{k+1}(x_{k+1})\right]\\
+&= \begin{cases}
+min \left\{px_k, E(J_{k+1}(x_{k+1})\right\}, & \text{ if } x_k \ne T, \\
+0, & \text{otherwise}
+\end{cases}\\
+&= \begin{cases}
+min \left\{p(N-k), E(J_{k+1}(x_{k+1})\right\}, & \text{ if } x_k \ne T, \\
+0, & \text{otherwise}
+\end{cases}\\
+\end{flalign*}
+
+\paragraph{Policy:}
+
+Buy if $p(N-k) \le E(J_{k+1}(x_{k+1})$ else dont buy.
+
+
+\subsection*{Problem 4}
+Suppose there are $N$ jobs to schedule on a computer. Let $T_i$ be the time it takes for job $i$ to complete. Here $T_i$ is a positive scalar. When job $i$ is scheduled, with probability $p_i$ a portion $\beta_i$ (a positive scalar) of its execution time $T_i$ is completed and with probability (1 - $p_i$), the computer crashes (not allowing any more job runs). Find the optimal schedule for the jobs, so that the total proportion of jobs completed is maximal.
+\subsubsection*{Solution:}
+
+Let $Z_i$ be the residual execution time of job $i \in \{1, 2, \dots N\}$. Consider two alternative schedules that job $i$ is executed before job $j$ and job $i$ is executed after job $j$ (interchanging argument). The number of jobs executed in these two policies respectively are:
+
+\[
+J_{i\rightarrow j} = p_1\beta_1Z_1 + p_2\beta_2Z_2 + \dots + p_i\beta_iZ_i + p_ip_j\beta_jZ_j + \dots
+\]
+
+\[
+J_{j\rightarrow i} = p_1\beta_1Z_1 + p_2\beta_2Z_2 + \dots + p_j\beta_jZ_j + p_ip_j\beta_iZ_i + \dots
+\]
+
+comparing $J_{i\rightarrow j}$ and $J_{j\rightarrow i}$, 
+
+\begin{flalign*}
+p_1\beta_1Z_1 + p_2\beta_2Z_2 + \dots + p_i\beta_iZ_i + p_ip_j\beta_jZ_j + \dots &= p_1\beta_1Z_1 + p_2\beta_2Z_2 + \dots + p_j\beta_jZ_j + p_ip_j\beta_iZ_i + \dots\\ 
+p_i\beta_iZ_i + p_ip_j\beta_jZ_j &= p_j\beta_jZ_j + p_ip_j\beta_iZ_i\\
+p_i\beta_iZ_i + p_ip_j\beta_jZ_j &= p_j\beta_jZ_j + p_ip_j\beta_iZ_i\\
+p_i(1-p_j)\beta_iZ_i &= p_j(1-p_i)\beta_jZ_j\\
+\frac{p_i\beta_iZ_i}{(1-p_i)} &= \frac{p_j\beta_jZ_j}{(1-p_j)}
+\end{flalign*}
+
+Let $B_k = \frac{p_k\beta_kZ_k}{(1-p_k)}$ and schedule the jobs based on non-decreasing $B_k$.
+
+\subsection*{Problem 5}
+\subsubsection*{Solution:}
+
+It is given that the single stage cost is time invariant. i.e., $g_k = g$.
+
+i) if $J_{N-1}(x) \le J_N(x)$ for all $x \in X$.
+Taking expectation on both sides and take minimum and add minimum of current stage cost,
+
+\begin{flalign*}
+min_a E_a[g(x, a)] + min_x [J_{N-1}(x)] &\le min_a E_a[g(x, a)] + min_x [J_{N}(x)]\\
+J_{N-2}(x) &\le J_(N-1)(x)
+\end{flalign*}
+
+Tracing back to $k$th stage, we can infer that $J_{k}(x) \le J_(k+1)(x)$
+
+ii) if $J_{N-1}(x) \ge J_N(x)$ for all $x \in X$.
+Taking expectation on both sides and take minimum and add minimum of current stage cost,
+
+\begin{flalign*}
+min_a E_a[g(x, a)] + min_x [J_{N-1}(x)] &\ge min_a E_a[g(x, a)] + min_x [J_{N}(x)]\\
+J_{N-2}(x) &\ge J_(N-1)(x)
+\end{flalign*}
+
+Tracing back to $k$th stage, we can infer that $J_{k}(x) \ge J_(k+1)(x)$
+~\newline\\
+
+\subsection*{Problem 6}
+\subsubsection*{Solution:}
+
+Let X be number of errors. Let N be the number of students/stages.
+
+\[
+x_k = p_kE_k
+\]
+
+$p_k$ is the probability of the student k finding error, $E_k$ is the number of errors found by student k.
+
+\paragraph{per-stage costs:}
+
+\begin{flalign}
+g_N(x_N) &= p_Nx_Nc_1 + (1-P_N)(X-X_N)c_2\\
+g_k(x_k) &= p_kx_kc_1
+\end{flalign}
+
+
+\end{document}
