@@ -10,3 +10,5 @@
 /MathrixOPC2015/Debug
 /MathrixOPC2015/.nuget
 /MathrixOPC2015/MathrixOPC2015/Debug
+.ipynb_checkpoints
+*.pyc

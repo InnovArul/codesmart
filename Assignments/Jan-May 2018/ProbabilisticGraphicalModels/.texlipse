@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Thu Mar 08 21:25:03 IST 2018
+markTmpDer=true
+builderNum=2
+outputDir=HW3/
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=HW3
+mainTexFile=HW3_answers.tex
+outputFile=HW3_answers.pdf
+langSpell=
+markDer=true
+srcDir=HW3/

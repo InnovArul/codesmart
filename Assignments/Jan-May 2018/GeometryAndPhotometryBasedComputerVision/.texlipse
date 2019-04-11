@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Mon Mar 12 12:56:25 IST 2018
+markTmpDer=true
+builderNum=2
+outputDir=homework2/
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=homework2/
+mainTexFile=assignment2_report.tex
+outputFile=assignment2_report.pdf
+langSpell=
+markDer=true
+srcDir=homework2/

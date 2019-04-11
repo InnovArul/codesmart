@@ -12,6 +12,7 @@ def play_episode(environment, weight):
     done = False
     pos = env.reset()
     while not done:
+        #env.render()
         pos, reward, done, _ = env.step(get_action(pos, weight))
         steps += 1
     
@@ -61,3 +62,7 @@ if __name__ == '__main__' :
     start_state = env.reset()
     final_avg_length = play_episode(env, final_weight)
     print('final avg episode length = ' + str(final_avg_length))
+    
+    # ImportError: sys.meta_path is None, Python is likely shutting down
+    env.env.close()
+
