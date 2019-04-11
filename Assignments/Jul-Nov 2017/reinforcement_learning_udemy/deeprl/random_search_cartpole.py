@@ -1,5 +1,6 @@
 # import gym package
 import gym
+from gym import wrappers
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -56,5 +57,7 @@ if __name__ == '__main__' :
     plt.plot(episode_length_avgs)
     plt.savefig('pics/random_search_cartpole.jpg')
     
-    final_avg_length = play_multiple_episodes(env, 100, final_weight)
+    env = wrappers.Monitor(env, 'pics', force=True)
+    start_state = env.reset()
+    final_avg_length = play_episode(env, final_weight)
     print('final avg episode length = ' + str(final_avg_length))
