@@ -12,7 +12,7 @@ def random_transform_image(img):
     # randomly transform the image
     h, w = img.shape
     transformer =   transform.AffineTransform(translation=(-w//2, -h//2)) +\
-                    transform.AffineTransform(rotation=0, translation=(30, 10)) +\
+                    transform.AffineTransform(rotation=0, translation=(10, 5)) +\
                     transform.AffineTransform(translation=(w//2, h//2)) 
 
     img_new = transform.warp(img, np.linalg.pinv(transformer.params))
