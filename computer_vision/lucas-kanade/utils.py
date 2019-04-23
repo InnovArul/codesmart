@@ -12,15 +12,18 @@ def random_transform_image(img):
     # randomly transform the image
     h, w = img.shape
     transformer =   transform.AffineTransform(translation=(-w//2, -h//2)) +\
-                    transform.AffineTransform(rotation=0, translation=(5, 4)) +\
+                    transform.AffineTransform(rotation=0, translation=(30, 10)) +\
                     transform.AffineTransform(translation=(w//2, h//2)) 
 
     img_new = transform.warp(img, np.linalg.pinv(transformer.params))
+    print('expected params', transformer.params)
+    input()
     return img_new, transformer
 
 def read_images():
     imgT = read_image('tom_jerry_bw.png')
     imgI, transformer = random_transform_image(imgT)
+    print('imgI min:{}, max:{}, imgT min:{}, max:{}'.format(imgI.min(), imgI.max(), imgT.min(), imgT.max()))
     return imgT, imgI, transformer
 
 def show_images(img1, img2):
