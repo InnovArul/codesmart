@@ -46,14 +46,15 @@ def get_A(imgI_warped):
 
     return dI_mul_dwdp
 
-def lucas_kanade_compositional(imgT, imgI):
-    # get A
-    p = np.eye(3)
+def lucas_kanade_compositional(imgT, imgI, eps=1e-8, p=None):
+    print('lucas_kanade_compositional: imgT shape:{}, imgI shape:{}'.format(imgT.shape, imgI.shape))
+    if p is None:
+        p = np.eye(3)
 
     for iteration in range(10000):
         # 1. get warped image
+        h, w = imgI.shape
         current_p = p
-        print('current p', current_p)
         imgI_warped = transform.warp(imgI, current_p)
 
         # show the images
@@ -63,7 +64,17 @@ def lucas_kanade_compositional(imgT, imgI):
         # 2. error image 
         error_img = imgT - imgI_warped
         error_img = error_img.reshape(-1, 1)
-        print('step: {}, error: {}'.format(iteration, (error_img**2).sum()))
+
+        # consider errors only for inliers
+        new_coords = transform.matrix_transform(get_traditional_xy_coords(imgI.shape), current_p)
+        error_img[new_coords[:,0] < 0] = 0
+        error_img[new_coords[:,1] < 0] = 0
+        error_img[new_coords[:,0] > w] = 0
+        error_img[new_coords[:,1] > h] = 0    
+
+        if iteration % 100 == 0:
+            print('step: {}, error: {}'.format(iteration, (error_img**2).sum()))
+            print('current p', current_p)
 
         # steps 3, 4, 5
         A = get_A(imgI_warped)
@@ -78,12 +89,9 @@ def lucas_kanade_compositional(imgT, imgI):
         # IMPORTANT TO ADD eye(3) with dp
         p = np.matmul(p, np.eye(3) + dp)
 
-def main():
-    # read template and instance images
-    imgT, imgI, transformer = read_images()
-
-    # show_images(imgT, imgI)
-    lucas_kanade_compositional(imgT, imgI)
-
-if __name__ == '__main__':
-    main()
+        # check for the minimum error threshold
+        dp_magnitude = (dp**2).sum()
+        if dp_magnitude <= eps:
+            break
+    
+    return p, imgI_warped

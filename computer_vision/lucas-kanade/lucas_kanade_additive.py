@@ -50,14 +50,17 @@ def get_A(imgI, p):
 
     return dI_mul_dwdp
 
-def lucas_kanade_addititve(imgT, imgI):
-    # get A
-    p = np.eye(3)[:2, :].reshape(-1, 1)
+def lucas_kanade_additive(imgT, imgI, eps=1e-8, p=None):
+    print('lucas_kanade_additive: imgT shape:{}, imgI shape:{}'.format(imgT.shape, imgI.shape))
+    if p is None:
+        p = np.eye(3)
+    
+    p = p[:2, :].reshape(-1, 1)
 
     for iteration in range(10000):
         # 1. get warped image
+        h, w = imgI.shape
         current_p = np.concatenate((p.reshape(2,3), np.array([[0,0,1]])), axis=0)
-        print('current p', current_p)
         imgI_warped = transform.warp(imgI, current_p)
 
         # show the images
@@ -67,7 +70,17 @@ def lucas_kanade_addititve(imgT, imgI):
         # 2. error image 
         error_img = imgT - imgI_warped
         error_img = error_img.reshape(-1, 1)
-        print('step: {}, error: {}'.format(iteration, (error_img**2).sum()))
+
+        # consider errors only for inliers
+        new_coords = transform.matrix_transform(get_traditional_xy_coords(imgI.shape), current_p)
+        error_img[new_coords[:,0] < 0] = 0
+        error_img[new_coords[:,1] < 0] = 0
+        error_img[new_coords[:,0] > w] = 0
+        error_img[new_coords[:,1] > h] = 0            
+        
+        if iteration % 100 == 0:
+            print('step: {}, error: {}'.format(iteration, (error_img**2).sum()))
+            print('current p', current_p)
 
         # steps 3, 4, 5
         A = get_A(imgI, current_p)
@@ -79,12 +92,10 @@ def lucas_kanade_addititve(imgT, imgI):
 
         p = p + dp
 
-def main():
-    # read template and instance images
-    imgT, imgI, transformer = read_images()
+        # check for the minimum error threshold
+        dp_magnitude = (dp**2).sum()
+        if dp_magnitude <= eps:
+            break
+    
+    return np.concatenate((p.reshape(2,3), np.array([[0,0,1]])), axis=0), imgI_warped
 
-    # show_images(imgT, imgI)
-    lucas_kanade_addititve(imgT, imgI)
-
-if __name__ == '__main__':
-    main()

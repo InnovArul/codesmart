@@ -13,9 +13,7 @@ def get_dI(img):
 
 def get_dw_dp(img):
     h, w = img.shape
-    target_coordinates = np.mgrid[0:h, 0:w][::-1] # [::-1] is needed for making x, y directions horizontal and vertical
-    # print('target coords: ', target_coordinates[:, :5, :5])
-    target_coordinates = target_coordinates.reshape(2, -1).T 
+    target_coordinates = get_traditional_xy_coords((h,w))
 
     dw_dp = np.zeros((h*w, 2, 6))
     dw_dp[:, 0, 0] =  target_coordinates[:, 0] # x
@@ -46,9 +44,10 @@ def get_A(img):
 
     return dT_mul_dwdp
 
-def lucas_kanade_addititve(imgT, imgI):
-    # get A
-    p = np.eye(3)
+def lucas_kanade_inverse_compositional(imgT, imgI, eps=1e-8, p=None):
+    print('lucas_kanade_inverse_compositional: imgT shape:{}, imgI shape:{}'.format(imgT.shape, imgI.shape))
+    if p is None:
+        p = np.eye(3)
 
     # steps 3, 4, 5
     #  in LK IC, the template image is having the burden of dp and taylor expansion
@@ -57,8 +56,8 @@ def lucas_kanade_addititve(imgT, imgI):
     
     for iteration in range(10000):
         # 1. get warped image
+        h, w = imgI.shape
         current_p = p
-        print('current p', current_p)
         imgI_warped = transform.warp(imgI, current_p)
 
         # show the images
@@ -68,7 +67,17 @@ def lucas_kanade_addititve(imgT, imgI):
         # 2. error image 
         error_img = imgI_warped - imgT
         error_img = error_img.reshape(-1, 1)
-        print('step: {}, error: {}'.format(iteration, (error_img**2).sum()))
+
+        # consider errors only for inliers
+        new_coords = transform.matrix_transform(get_traditional_xy_coords(imgI.shape), current_p)
+        error_img[new_coords[:,0] < 0] = 0
+        error_img[new_coords[:,1] < 0] = 0
+        error_img[new_coords[:,0] > w] = 0
+        error_img[new_coords[:,1] > h] = 0        
+
+        if iteration % 100 == 0:
+            print('step: {}, error: {}'.format(iteration, (error_img**2).sum()))
+            print('current p', current_p)
         
         # 6. calculate dp (similar to optical flow formulation with least square fitting)
         H = np.linalg.pinv(np.matmul(A.T, A))
@@ -76,17 +85,15 @@ def lucas_kanade_addititve(imgT, imgI):
         dp = np.matmul(H, after_H)
 
         # reformat dp as per LK IC algorithm
-        dp = np.eye(3) + np.concatenate((dp.reshape(2,3), np.array([[0,0,0]])), axis=0)
+        eye_plus_dp = np.eye(3) + np.concatenate((dp.reshape(2,3), np.array([[0,0,0]])), axis=0)
 
         # multiplication of p with the inverse of dp
-        p = np.matmul(p, np.linalg.pinv(dp))
+        p = np.matmul(p, np.linalg.pinv(eye_plus_dp))
 
-def main():
-    # read template and instance images
-    imgT, imgI, transformer = read_images()
+        # check for the minimum error threshold
+        dp_magnitude = (dp**2).sum()
+        if dp_magnitude <= eps:
+            break
+    
+    return p, imgI_warped
 
-    # show_images(imgT, imgI)
-    lucas_kanade_addititve(imgT, imgI)
-
-if __name__ == '__main__':
-    main()
