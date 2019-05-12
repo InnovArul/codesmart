@@ -1,0 +1,13 @@
+HEIGHT: 200
+WIDTH: 100
+WORKERS: 4
+SAVE_DIR: resnet50_exp0
+SAVE_PREFIX: resnet50_exp0
+SEED: 42
+TEST:
+  BATCH_SIZE: 1
+TRAIN:
+  BATCH_SIZE: 64
+  PRETRAINED_MODEL: "./scratch/model0.pth"
+
+
