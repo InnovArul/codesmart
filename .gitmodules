@@ -1,0 +1,3 @@
+[submodule "computer_vision/pytorch/spatial_correlation_sampler_analysis/Pytorch-Correlation-extension"]
+	path = computer_vision/pytorch/spatial_correlation_sampler_analysis/Pytorch-Correlation-extension
+	url = https://github.com/ClementPinard/Pytorch-Correlation-extension
