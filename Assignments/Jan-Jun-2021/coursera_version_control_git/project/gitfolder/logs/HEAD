@@ -1,0 +1,34 @@
+0000000000000000000000000000000000000000 ce61f461acf75e4b4549f1e2742afee0f7ba252d Arul <arul.csecit@ymail.com> 1624768822 +0530	commit (initial): add README.md
+ce61f461acf75e4b4549f1e2742afee0f7ba252d ce61f461acf75e4b4549f1e2742afee0f7ba252d Arul <arul.csecit@ymail.com> 1624768826 +0530	checkout: moving from main to develop
+ce61f461acf75e4b4549f1e2742afee0f7ba252d 4b4a8666543306c5276f6369eab2094e3dcbe016 Arul <arul.csecit@ymail.com> 1624768864 +0530	commit: add fileA.txt
+4b4a8666543306c5276f6369eab2094e3dcbe016 4b4a8666543306c5276f6369eab2094e3dcbe016 Arul <arul.csecit@ymail.com> 1624768883 +0530	checkout: moving from develop to feature1
+4b4a8666543306c5276f6369eab2094e3dcbe016 1692a694efb71f88691d395c4ebdafd982a4dfa4 Arul <arul.csecit@ymail.com> 1624768909 +0530	commit: feature 1 wip
+1692a694efb71f88691d395c4ebdafd982a4dfa4 4257d11e3baf61d833758944f304e552b9fa7bbc Arul <arul.csecit@ymail.com> 1624768942 +0530	commit: add feature1
+4257d11e3baf61d833758944f304e552b9fa7bbc 4b4a8666543306c5276f6369eab2094e3dcbe016 Arul <arul.csecit@ymail.com> 1624768959 +0530	checkout: moving from feature1 to develop
+4b4a8666543306c5276f6369eab2094e3dcbe016 faa69bdab565f18d110d80d8108b789d0c415304 Arul <arul.csecit@ymail.com> 1624769032 +0530	merge feature1: Merge made by the 'recursive' strategy.
+faa69bdab565f18d110d80d8108b789d0c415304 faa69bdab565f18d110d80d8108b789d0c415304 Arul <arul.csecit@ymail.com> 1624769091 +0530	checkout: moving from develop to feature2
+faa69bdab565f18d110d80d8108b789d0c415304 feb870c21450f8eb7abdc262ca40a64b7af86e99 Arul <arul.csecit@ymail.com> 1624769137 +0530	commit: feature 2 wip
+feb870c21450f8eb7abdc262ca40a64b7af86e99 faa69bdab565f18d110d80d8108b789d0c415304 Arul <arul.csecit@ymail.com> 1624769885 +0530	checkout: moving from feature2 to develop
+faa69bdab565f18d110d80d8108b789d0c415304 faa69bdab565f18d110d80d8108b789d0c415304 Arul <arul.csecit@ymail.com> 1624769902 +0530	checkout: moving from develop to release1
+faa69bdab565f18d110d80d8108b789d0c415304 48c19d8d6a84d52840362919e444f075008dcb6a Arul <arul.csecit@ymail.com> 1624769939 +0530	commit: fix feature 1 bug X
+48c19d8d6a84d52840362919e444f075008dcb6a ce61f461acf75e4b4549f1e2742afee0f7ba252d Arul <arul.csecit@ymail.com> 1624769997 +0530	checkout: moving from release1 to main
+ce61f461acf75e4b4549f1e2742afee0f7ba252d 0df73053a6495fc0c07770c1efd5f8c54ea45966 Arul <arul.csecit@ymail.com> 1624770035 +0530	merge release1: Merge made by the 'recursive' strategy.
+0df73053a6495fc0c07770c1efd5f8c54ea45966 48c19d8d6a84d52840362919e444f075008dcb6a Arul <arul.csecit@ymail.com> 1624770216 +0530	checkout: moving from main to 48c19d8
+48c19d8d6a84d52840362919e444f075008dcb6a 48c19d8d6a84d52840362919e444f075008dcb6a Arul <arul.csecit@ymail.com> 1624770259 +0530	checkout: moving from 48c19d8d6a84d52840362919e444f075008dcb6a to release1
+48c19d8d6a84d52840362919e444f075008dcb6a faa69bdab565f18d110d80d8108b789d0c415304 Arul <arul.csecit@ymail.com> 1624770280 +0530	checkout: moving from release1 to develop
+faa69bdab565f18d110d80d8108b789d0c415304 78f8e589cf93bdcd76cec0b7baf2ad73c49fd9ba Arul <arul.csecit@ymail.com> 1624770299 +0530	merge release1: Merge made by the 'recursive' strategy.
+78f8e589cf93bdcd76cec0b7baf2ad73c49fd9ba feb870c21450f8eb7abdc262ca40a64b7af86e99 Arul <arul.csecit@ymail.com> 1624770393 +0530	checkout: moving from develop to feature2
+feb870c21450f8eb7abdc262ca40a64b7af86e99 78f8e589cf93bdcd76cec0b7baf2ad73c49fd9ba Arul <arul.csecit@ymail.com> 1624770401 +0530	rebase (start): checkout develop
+78f8e589cf93bdcd76cec0b7baf2ad73c49fd9ba 337116ebfce445349f03d4e778b37f9e4676d4c9 Arul <arul.csecit@ymail.com> 1624770498 +0530	rebase (continue): feature 2 wip
+337116ebfce445349f03d4e778b37f9e4676d4c9 337116ebfce445349f03d4e778b37f9e4676d4c9 Arul <arul.csecit@ymail.com> 1624770512 +0530	rebase (continue) (finish): returning to refs/heads/feature2
+337116ebfce445349f03d4e778b37f9e4676d4c9 0df73053a6495fc0c07770c1efd5f8c54ea45966 Arul <arul.csecit@ymail.com> 1624770554 +0530	checkout: moving from feature2 to main
+0df73053a6495fc0c07770c1efd5f8c54ea45966 0df73053a6495fc0c07770c1efd5f8c54ea45966 Arul <arul.csecit@ymail.com> 1624770590 +0530	checkout: moving from main to hotfix1
+0df73053a6495fc0c07770c1efd5f8c54ea45966 fc41b6978f21699d9be209628b8cb84651bc5b7a Arul <arul.csecit@ymail.com> 1624770614 +0530	commit: fix feature 1 bug Y
+fc41b6978f21699d9be209628b8cb84651bc5b7a 0df73053a6495fc0c07770c1efd5f8c54ea45966 Arul <arul.csecit@ymail.com> 1624770657 +0530	checkout: moving from hotfix1 to main
+0df73053a6495fc0c07770c1efd5f8c54ea45966 6ad2832f4985332518f7176786dc52fe2986ed85 Arul <arul.csecit@ymail.com> 1624770686 +0530	merge hotfix1: Merge made by the 'recursive' strategy.
+6ad2832f4985332518f7176786dc52fe2986ed85 78f8e589cf93bdcd76cec0b7baf2ad73c49fd9ba Arul <arul.csecit@ymail.com> 1624770712 +0530	checkout: moving from main to develop
+78f8e589cf93bdcd76cec0b7baf2ad73c49fd9ba 214c2d0c07a9e2cdd14b44602f064ee55ef9c1a3 Arul <arul.csecit@ymail.com> 1624770732 +0530	merge hotfix1: Merge made by the 'recursive' strategy.
+214c2d0c07a9e2cdd14b44602f064ee55ef9c1a3 337116ebfce445349f03d4e778b37f9e4676d4c9 Arul <arul.csecit@ymail.com> 1624770816 +0530	checkout: moving from develop to feature2
+337116ebfce445349f03d4e778b37f9e4676d4c9 214c2d0c07a9e2cdd14b44602f064ee55ef9c1a3 Arul <arul.csecit@ymail.com> 1624770834 +0530	rebase (start): checkout develop
+214c2d0c07a9e2cdd14b44602f064ee55ef9c1a3 8c03016e164f10ef8cd7eec67b37254772617695 Arul <arul.csecit@ymail.com> 1624770866 +0530	rebase (continue): feature 2 wip
+8c03016e164f10ef8cd7eec67b37254772617695 8c03016e164f10ef8cd7eec67b37254772617695 Arul <arul.csecit@ymail.com> 1624770874 +0530	rebase (continue) (finish): returning to refs/heads/feature2

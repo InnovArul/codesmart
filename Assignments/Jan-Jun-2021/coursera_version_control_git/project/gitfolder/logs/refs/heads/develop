@@ -1,0 +1,5 @@
+0000000000000000000000000000000000000000 ce61f461acf75e4b4549f1e2742afee0f7ba252d Arul <arul.csecit@ymail.com> 1624768826 +0530	branch: Created from HEAD
+ce61f461acf75e4b4549f1e2742afee0f7ba252d 4b4a8666543306c5276f6369eab2094e3dcbe016 Arul <arul.csecit@ymail.com> 1624768864 +0530	commit: add fileA.txt
+4b4a8666543306c5276f6369eab2094e3dcbe016 faa69bdab565f18d110d80d8108b789d0c415304 Arul <arul.csecit@ymail.com> 1624769032 +0530	merge feature1: Merge made by the 'recursive' strategy.
+faa69bdab565f18d110d80d8108b789d0c415304 78f8e589cf93bdcd76cec0b7baf2ad73c49fd9ba Arul <arul.csecit@ymail.com> 1624770299 +0530	merge release1: Merge made by the 'recursive' strategy.
+78f8e589cf93bdcd76cec0b7baf2ad73c49fd9ba 214c2d0c07a9e2cdd14b44602f064ee55ef9c1a3 Arul <arul.csecit@ymail.com> 1624770732 +0530	merge hotfix1: Merge made by the 'recursive' strategy.
