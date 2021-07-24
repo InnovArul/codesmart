@@ -1,0 +1,5 @@
+len: 4, cost: 6, pred list: [1, 3, 4, 2], estimated: 6
+len: 2, cost: 1, pred list: [1, 2], estimated: 1
+len: 7, cost: 12, pred list: [1, 2, 3, 5, 7, 6, 4], estimated: 12
+len: 7, cost: 2, pred list: []
+len: 2, cost: 1000, pred list: []
