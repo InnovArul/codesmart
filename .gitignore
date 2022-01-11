@@ -12,3 +12,8 @@
 /MathrixOPC2015/MathrixOPC2015/Debug
 .ipynb_checkpoints
 *.pyc
+/competition/leetcode/leetcodecpp/Debug
+/competition/leetcode/leetcodecpp/x64/Debug
+/competition/leetcode/leetcodecpp/.vs/leetcodecpp/v17
+/competition/leetcode/leetcodecpp/.vs/leetcodecpp
+/competition/leetcode/.vs
