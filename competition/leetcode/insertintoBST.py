@@ -4,6 +4,8 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+#
+# Leetcode provides its own TreeNode definition internally
 class Solution:
     def insertIntoBST(self, root, val):
         if not root: return TreeNode(val=val)
