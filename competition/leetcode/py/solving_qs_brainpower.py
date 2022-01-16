@@ -2,7 +2,7 @@
 
 # bottom up approach
 class Solution:
-    def mostPoints(self, questions: List[List[int]]) -> int:
+    def mostPoints(self, questions):
         n = len(questions)
 
         dp = [0] * n
@@ -19,7 +19,7 @@ class Solution:
 
 # top down approach
 class Solution:
-    def mostPoints(self, questions: List[List[int]]) -> int:
+    def mostPoints(self, questions):
         n = len(questions)
         
         @cache
