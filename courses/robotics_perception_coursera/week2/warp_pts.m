@@ -17,10 +17,12 @@ function [ warped_pts ] = warp_pts( video_pts, logo_pts, sample_pts)
 % Written for the University of Pennsylvania's Robotics:Perception course
 
 % Complete est_homography first!
-[ H ] = est_homography(video_pts, logo_pts);
+[ H_logo_video ] = est_homography(video_pts, logo_pts);
 
 % YOUR CODE HERE
-
-warped_pts = [];
+N = size(sample_pts, 1);
+sample_pts_homo = cat(2, sample_pts, ones(N, 1));
+warped_pts_homo = (H_logo_video * sample_pts_homo')';
+warped_pts = warped_pts_homo(1:end, 1:2) ./ warped_pts_homo(1:end, 3);
 end
 
