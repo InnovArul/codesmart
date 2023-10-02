@@ -13,7 +13,15 @@ function [proj_points, t, R] = ar_cube(H,render_points,K)
 % Written by Stephen Phillips for the Coursera Robotics:Perception course
 
 % YOUR CODE HERE: Extract the pose from the homography
+r1 = H(:, 1) / norm(H(:, 1));
+r2 = H(:, 2) / norm(H(:, 2));
+r3 = cross(r1, r2);
+R = [r1 r2 r3];
+t = H(:, 3) / norm(H(:, 1));
 
 % YOUR CODE HERE: Project the points using the pose
+p_cam = R * render_points' + t;
+proj = (K * p_cam)';
+proj_points = proj(:, 1:2) ./ proj(:, 3);
 
 end
