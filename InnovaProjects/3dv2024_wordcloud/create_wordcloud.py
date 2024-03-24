@@ -16,11 +16,13 @@ if __name__ == '__main__':
 
     text = " ".join(contents)
 
-    wordcloud = WordCloud(width=2000, height=1200, stopwords=STOPWORDS, background_color='white').generate(text)
-    figure = plt.figure(figsize=(8,6))
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis("off")
-    # plt.show(block=True)
+    wordcloud = WordCloud(width=2000, height=1200, stopwords=STOPWORDS, max_words=100,
+                          background_color='white').generate(text)
+    wordcloud.to_file("wordcloud_direct.png")
+    # figure = plt.figure(figsize=(8,6))
+    # plt.imshow(wordcloud, interpolation='bilinear')
+    # plt.axis("off")
+    # # plt.show(block=True)
 
-    figure.set_size_inches(8, 6)
-    plt.savefig("wordcloud.png", dpi=400, bbox_inches='tight')
+    # figure.set_size_inches(8, 6)
+    # plt.savefig("wordcloud.png", dpi=600, bbox_inches='tight')
