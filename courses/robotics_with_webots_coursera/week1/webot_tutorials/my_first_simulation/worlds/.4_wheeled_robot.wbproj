@@ -5,6 +5,6 @@ sceneTreePerspectives: 000000ff00000001000000030000001c000002b4000000fa010000000
 maximizedDockId: -1
 centralWidgetVisible: 1
 orthographicViewHeight: 1
-textFiles: 0 "protos/FourWheelsRobot.proto"
+textFiles: 0 "../my_first_simulation/protos/FourWheelsRobot.proto"
 globalOptionalRendering: DistanceSensorRays
 consoles: Console:All:All
