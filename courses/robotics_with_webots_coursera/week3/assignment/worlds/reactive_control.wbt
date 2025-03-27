@@ -8,30 +8,30 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.549283585709765 -0.535738057585116 -0.6413051349589759 4.371584900818352
-  position 0.22417811815497424 -0.668505837028336 2.1302088846956906
+  orientation 0.025830452466732937 -0.9990992840536568 0.033666130291946386 4.717809774625927
+  position -0.06730923961150173 -0.38559792327732556 2.01171818536456
 }
 TexturedBackground {
   luminosity 0.5
 }
 TexturedBackgroundLight {
-  luminosity 0.7
+  luminosity 0.6
+  castShadows FALSE
 }
 RectangleArena {
   floorSize 3 3
 }
 E-puck {
-  translation -0.0646156 -0.155902 -6.86056e-05
-  rotation 0.004908959446411595 -0.0014585898355133243 0.9999868872304503 3.086
+  translation -0.0394185 -0.149301 -6.39417e-05
+  rotation -1.1060197116955283e-05 -0.0007219518118099222 0.9999997393315929 3.11096
   controller "reactive_controller"
 }
 Solid {
-  translation 0.282647 -0.140123 0.11764249937484268
-  rotation 0.9786010249690602 0.1989822084103722 -0.052403384104807 4.6804313916083845e-17
+  translation 0.282647 -0.140123 0.11764250037778072
+  rotation 0.543922064078248 0.25687158122920756 -0.7988527892957906 1.0876904757141472e-16
   children [
     Shape {
       appearance PBRAppearance {
-        baseColor 0.6 0.756863 0.945098
         roughness 1
         metalness 0
       }
@@ -46,12 +46,11 @@ Solid {
   }
 }
 Solid {
-  translation -0.3355892934227754 -0.14036899531591795 0.11764249937485684
-  rotation 4.327398184317948e-11 4.8710077644384434e-12 1 6.0679652787718e-07
+  translation -0.3355892934227754 -0.14036899531591795 0.1176425
+  rotation -7.577294875176329e-13 -1.5628492207048446e-10 1 6.067965278189576e-07
   children [
     Shape {
       appearance PBRAppearance {
-        baseColor 0.560784 0.941176 0.643137
         roughness 1
         metalness 0
       }
@@ -62,4 +61,7 @@ Solid {
   boundingObject USE SOLID_BOX
   physics Physics {
   }
+}
+TexturedBackgroundLight {
+  castShadows FALSE
 }

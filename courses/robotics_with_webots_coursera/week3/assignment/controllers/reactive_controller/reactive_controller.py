@@ -23,6 +23,8 @@ right_motor = robot.getDevice('right wheel motor')
 left_motor.setPosition(float("inf"))
 right_motor.setPosition(float("inf"))
 
+PROXIMITY_SENSOR_THRESHOLD = 77.6624000
+
 # enable proximity sensors
 def enable_sensors(sensor_prefix, num_sensors):
     """
@@ -102,7 +104,7 @@ while robot.step(timestep) != -1:
     # print(state)
     
     if state == "MOVING_FORWARD":
-        if is_obstacle_in_front(proximity_sensor_vals):
+        if is_obstacle_in_front(proximity_sensor_vals, threshold=PROXIMITY_SENSOR_THRESHOLD):
             if rotation_count == 0:
                 state = "ROTATE_180"
                 print(f"transitioning to {state}")
@@ -132,7 +134,7 @@ while robot.step(timestep) != -1:
             print(f"transitioning to {state}")
     
     elif state == "MOVE_FORWARD_UNTIL_OBSTACLE_NOT_IN_LEFT":
-        if is_obstacle_in_left(proximity_sensor_vals):
+        if is_obstacle_in_left(proximity_sensor_vals, threshold=PROXIMITY_SENSOR_THRESHOLD):
             move_forward()
         else:
             state = "FINISH"
