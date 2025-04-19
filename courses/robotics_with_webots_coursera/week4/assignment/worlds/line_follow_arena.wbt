@@ -9,7 +9,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.5364608024788161 0.6173605988610111 0.5753917781631557 1.9718422619967917
-  position 0.1085384429121434 0.03722299100616537 2.2866176447316833
+  position 0.08550540200931803 -0.036253006861588145 1.297987174720407
 }
 TexturedBackground {
 }
@@ -451,7 +451,8 @@ Solid {
   model "rectangle arena"
 }
 E-puck {
-  rotation 0 0 1 1.5708
+  translation 0 0.028 0
+  rotation 0 0 1 1.57
   controller "line_follow_controller"
   groundSensorsSlot [
     E-puckGroundSensors {

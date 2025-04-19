@@ -12,12 +12,13 @@ robot = Robot()
 timestep = int(robot.getBasicTimeStep())
 
 # get references to motors
-left_motor = robot.getDevice('left wheel motor')
-right_motor = robot.getDevice('right wheel motor')
+left_motor = robot.getDevice("left wheel motor")
+right_motor = robot.getDevice("right wheel motor")
 
 # set motors to velocity control
 left_motor.setPosition(float("inf"))
 right_motor.setPosition(float("inf"))
+
 
 # enable ground sensors
 def enable_sensors(sensor_prefix, num_sensors):
@@ -30,11 +31,12 @@ def enable_sensors(sensor_prefix, num_sensors):
         sensor = robot.getDevice(f"{sensor_prefix}{i}")
         sensor.enable(timestep)
         sensor_handles.append(sensor)
-     
+
     return sensor_handles
 
 
 ground_sensors = enable_sensors("gs", 3)
+
 
 def get_sensor_values(sensor_handles):
     """
@@ -46,45 +48,80 @@ def get_sensor_values(sensor_handles):
 
     return np.array(vals)
 
-MAX_SPEED = 3.14
-# previous_time = timestep
+# constants
+MAX_SPEED = 6.28
 r = 0.0201
 d = 0.052
-distances = 0
-rotations = 0
 delta_t = timestep / 1000
+START_POINT_COUNT = 4
 
+# buffer to note down corner counts
+all_dark = False
+all_dark_count = 0
+
+xytheta = np.array([0, 0.0, np.pi / 2.0, 1]).reshape(4, 1)
+
+phildot, phirdot = 0, 0
 # Main loop:
 # - perform simulation steps until Webots is stopping the controller
 while robot.step(timestep) != -1:
     # Read the sensors:
-    # Enter here functions to read sensor data, like:
-    #  val = ds.getValue()
     g = get_sensor_values(ground_sensors)
     print(g)
 
-    if (g[0] > 500 and g[1]<350 and g[2]>500): # drive straight
-        phildot, phirdot = MAX_SPEED, MAX_SPEED
-    # elif np.all(np.array(g) < 500):
-        # phildot, phirdot = 0.0, 0.0
-    elif(g[2]<550): # turn right
-        phildot, phirdot = 0.3 * MAX_SPEED, 0.02*MAX_SPEED
-    elif(g[0]<550): # turn right
-        phildot, phirdot = 0.02 * MAX_SPEED, 0.3*MAX_SPEED
+    # if only center ground sensor sees dark sport, move forward
+    if g[0] > 500 and g[1] < 350 and g[2] > 500:  
+        # drive straight
+        all_dark = False
+        if all_dark_count < 4:
+            phildot, phirdot = 0.8 * MAX_SPEED, 0.8* MAX_SPEED
 
-    
+    # if all center ground sensor see dark sport, decide between corner and starting point
+    elif g[0] < 350 and g[1] < 350 and g[2] < 350:
+        # if all the ground sensors sense values < 300, then either its a corner or starting point
+        if not all_dark:
+            # there are 3 corners, count the corner until stop
+            all_dark = True
+            all_dark_count += 1
+
+        # check if robot reached start point
+        if all_dark and all_dark_count >= START_POINT_COUNT:
+            phildot, phirdot = 0.4 * MAX_SPEED, 0.4 * MAX_SPEED
+
+    elif g[2] < 550:  
+        # if right sensor sees dark sport, turn right
+        all_dark = False
+        if all_dark_count < 4:
+            phildot, phirdot = 0.4 * MAX_SPEED, 0.005 * MAX_SPEED
+
+    elif g[0] < 550:  
+        # turn left if left sensor sees dark spot
+        all_dark = False
+        if all_dark_count < 4:
+            phildot, phirdot = 0.005 * MAX_SPEED, 0.4 * MAX_SPEED
+
+    # stop when the robot is at starting point
+    if not all_dark and all_dark_count >= START_POINT_COUNT:
+        phildot, phirdot = 0, 0
+
     left_motor.setVelocity(phildot)
     right_motor.setVelocity(phirdot)
-    # print(previous_time, timestep, previous_time-timestep)
 
-    distances += (r * delta_t * (phildot + phirdot) / 2.)
-    rotations += (r * delta_t * (phirdot - phildot) / d)
+    # calculate left wheel, right wheel distances travelled
+    d_r = r * phirdot * delta_t
+    d_l = r * phildot * delta_t
+    distance_travelled = (d_l + d_r) / 2.0
+    deltheta = (d_r - d_l) / d
 
-    print(distances, rotations)
-    # Process sensor data here.
+    # transform matrix
+    transform = np.eye(4)
+    transform[0, 3] = distance_travelled * np.cos(xytheta[2, 0] + deltheta / 2.0)
+    transform[1, 3] = distance_travelled * np.sin(xytheta[2, 0] + deltheta / 2.0)
+    transform[2, 3] = deltheta
 
-    # Enter here functions to send actuator commands, like:
-    #  motor.setPosition(10.0)
-    pass
+    xytheta = transform @ xytheta
 
-# Enter here exit cleanup code.
+    print(
+        f"x: {xytheta[0,0]:.03f}, y: {xytheta[1,0]:.03f}, theta: {xytheta[2,0]:.03f}, "
+        f"delta from origin {np.linalg.norm(xytheta[:2]) * 100:.03f} cm"
+    )
