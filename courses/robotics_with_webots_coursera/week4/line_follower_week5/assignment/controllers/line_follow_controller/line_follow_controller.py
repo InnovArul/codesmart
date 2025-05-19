@@ -4,7 +4,6 @@
 #  from controller import Robot, Motor, DistanceSensor
 from controller import Robot
 import numpy as np
-from matplotlib import pyplot as plt
 
 # create the Robot instance.
 robot = Robot()
@@ -20,21 +19,6 @@ right_motor = robot.getDevice("right wheel motor")
 left_motor.setPosition(float("inf"))
 right_motor.setPosition(float("inf"))
 
-# enable gps and compass
-gps = robot.getDevice('gps')
-gps.enable(timestep)
-
-compass = robot.getDevice('compass')
-compass.enable(timestep)
-
-display = robot.getDevice('display')
-# display.enable(timestep)
-
-def enable_lidar():
-    lidar = robot.getDevice('LDS-01')
-    lidar.enable(timestep)
-    lidar.enablePointCloud()
-    return lidar
 
 # enable ground sensors
 def enable_sensors(sensor_prefix, num_sensors):
@@ -52,7 +36,7 @@ def enable_sensors(sensor_prefix, num_sensors):
 
 
 ground_sensors = enable_sensors("gs", 3)
-lidar = enable_lidar()
+
 
 def get_sensor_values(sensor_handles):
     """
@@ -63,16 +47,6 @@ def get_sensor_values(sensor_handles):
         vals.append(sensor.getValue())
 
     return np.array(vals)
-
-
-def world2map(xw,yw):
-    center_from_left = np.array([0.194, 1-0.253]) * 300
-    display_from_w = np.array([[1,0,center_from_left[0]],[0,-1,center_from_left[1]],[0,0,1]])
-    # print(np.array([300 * xw, 300 * yw, 1]).reshape(3, 1))
-    # print(xw, yw)
-    p_disp = display_from_w @ np.array([300 * xw, 300 * yw, 1]).reshape(3, 1)
-    return [p_disp[0],p_disp[1]]
-    # return [0,0]
 
 # constants
 MAX_SPEED = 6.28
@@ -86,35 +60,20 @@ all_dark = False
 all_dark_count = 0
 
 xytheta = np.array([0, 0.0, np.pi / 2.0, 1]).reshape(4, 1)
+
 phildot, phirdot = 0, 0
 # Main loop:
 # - perform simulation steps until Webots is stopping the controller
 while robot.step(timestep) != -1:
-    # left_motor.setVelocity(phildot)
-    # right_motor.setVelocity(phirdot)
-    # ranges = lidar.getRangeImage()
-    # print(ranges)
-    # print("***")
-    # continue
-    # print(f"ranges {len(ranges)}")
-    # print(ranges[0:5])
-    
-    
-    # fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-    # ranges = lidar.getRangeImage()
-    angles = np.linspace(3.1415, -3.1415, 360)
-    # ax.plot(angles,ranges,'.')
-    # plt.show()
-    
     # Read the sensors:
     g = get_sensor_values(ground_sensors)
-    # print(g)
+    print(g)
 
     # if only center ground sensor sees dark sport, move forward
     if g[0] > 500 and g[1] < 350 and g[2] > 500:  
         # drive straight
         all_dark = False
-        if all_dark_count < START_POINT_COUNT:
+        if all_dark_count < 4:
             phildot, phirdot = 0.8 * MAX_SPEED, 0.8* MAX_SPEED
 
     # if all center ground sensor see dark sport, decide between corner and starting point
@@ -127,25 +86,24 @@ while robot.step(timestep) != -1:
 
         # check if robot reached start point
         if all_dark and all_dark_count >= START_POINT_COUNT:
-            phildot, phirdot = 0.01 * MAX_SPEED, 0.4 * MAX_SPEED
+            phildot, phirdot = 0.4 * MAX_SPEED, 0.4 * MAX_SPEED
 
     elif g[2] < 550:  
         # if right sensor sees dark sport, turn right
         all_dark = False
-        if all_dark_count < START_POINT_COUNT:
-            phildot, phirdot = 0.3 * MAX_SPEED, -0.001 * MAX_SPEED
+        if all_dark_count < 4:
+            phildot, phirdot = 0.4 * MAX_SPEED, 0.005 * MAX_SPEED
 
     elif g[0] < 550:  
         # turn left if left sensor sees dark spot
         all_dark = False
-        if all_dark_count < START_POINT_COUNT:
-            phildot, phirdot = -0.001 * MAX_SPEED, 0.4 * MAX_SPEED
+        if all_dark_count < 4:
+            phildot, phirdot = 0.005 * MAX_SPEED, 0.4 * MAX_SPEED
 
     # stop when the robot is at starting point
-    if all_dark_count >= START_POINT_COUNT:
+    if not all_dark and all_dark_count >= START_POINT_COUNT:
         phildot, phirdot = 0, 0
 
-    # phildot, phirdot = 0, 0
     left_motor.setVelocity(phildot)
     right_motor.setVelocity(phirdot)
 
@@ -162,38 +120,8 @@ while robot.step(timestep) != -1:
     transform[2, 3] = deltheta
 
     xytheta = transform @ xytheta
-    
-    display.setColor(0xFF0000)
-    
-    # using GPS, compass
-    xw = gps.getValues()[0]
-    yw = gps.getValues()[1]
-    theta=np.arctan2(compass.getValues()[0],compass.getValues()[1])
-    # print(xw, yw, theta)
-    
-    w_T_r = np.array([[np.cos(theta),-np.sin(theta), xw],
-                      [np.sin(theta),np.cos(theta), yw],
-                      [0,0,1]])            
-    ranges = np.array(lidar.getRangeImage())
-    ranges[ranges == np.inf] = 100
-    X_r = np.array([ranges*np.cos(angles), 
-                    ranges*np.sin(angles),
-                    np.ones(len(angles))])
-                    
-    # R_w_r = np.array([[0,-1,0], [1,0,0],[0,0,1]])
-    D = w_T_r @ X_r
 
-    # display.drawPixel(*world2map(xytheta[0,0], xytheta[1,0]))
-    display.drawPixel(*world2map(xw, yw))
-    
-    for point in D.T:
-        display.setColor(0xFFFFFF)
-        display.drawPixel(*world2map(point[0], point[1]))
-        
-    # print(D.T)
-    # print("-----------")
-
-    # print(
-        # f"x: {xytheta[0,0]:.03f}, y: {xytheta[1,0]:.03f}, theta: {xytheta[2,0]:.03f}, "
-        # f"delta from origin {np.linalg.norm(xytheta[:2]) * 100:.03f} cm all_dark_count {all_dark_count}"
-    # )
+    print(
+        f"x: {xytheta[0,0]:.03f}, y: {xytheta[1,0]:.03f}, theta: {xytheta[2,0]:.03f}, "
+        f"delta from origin {np.linalg.norm(xytheta[:2]) * 100:.03f} cm"
+    )
