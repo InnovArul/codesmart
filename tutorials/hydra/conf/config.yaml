@@ -1,0 +1,3 @@
+defaults:
+ - db: mysql
+ - db/mysql/engine: innodb
