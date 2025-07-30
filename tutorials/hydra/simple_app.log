@@ -1,0 +1,31 @@
+[2025-06-15 21:41:47,350][root][INFO] - db:
+  driver: mysql
+  user: omry
+  password: secret
+  mysql:
+    engine:
+      name: name
+input: input.txt
+output: output.txt
+
+[2025-06-15 21:42:24,445][root][INFO] - db:
+  driver: mysql
+  user: omry
+  password: secret
+  mysql:
+    engine:
+      name: name
+input: input.txt
+output: output.txt
+
+[2025-06-15 21:42:36,585][root][INFO] - This is a simple function that prints a message.
+[2025-06-15 21:42:36,586][root][INFO] - db:
+  driver: mysql
+  user: omry
+  password: secret
+  mysql:
+    engine:
+      name: name
+input: input.txt
+output: output.txt
+

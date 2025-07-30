@@ -1,3 +1,5 @@
 defaults:
- - db: mysql
- - db/mysql/engine: innodb
+    - db: mysql
+    - db/mysql/engine: innodb
+    # - override hydra/job_logging: colorlog
+    # - override hydra/hydra_logging: colorlog

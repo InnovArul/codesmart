@@ -1,0 +1,9 @@
+db:
+  driver: mysql
+  user: omry
+  password: secret
+  mysql:
+    engine:
+      name: name
+input: input.txt
+output: output.txt
