@@ -1,0 +1,5 @@
+using mmseg models from pytorch lightning
+https://github.com/open-mmlab/mmsegmentation/issues/2931
+
+Alternative to mmseg
+https://github.com/qubvel-org/segmentation_models.pytorch
