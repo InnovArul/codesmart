@@ -20,7 +20,7 @@ class Portfolio:
         results = []
         for x in range(num_points + 1):
             w = x / num_points
-            weights = np.array([w, 1 - w])
+            weights = np.array([1 - w, w])
             ret = self.get_weighted_return(weights)
             vol = self.get_weighted_std(weights)
             results.append((w, ret, vol))
